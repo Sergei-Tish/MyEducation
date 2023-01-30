@@ -1,10 +1,10 @@
 public abstract class Vector {
-    private int x1;
-    private int y1;
-    private int z1;
-    private int x2;
-    private int y2;
-    private int z2;
+    int x1;
+    int y1;
+    int z1;
+    int x2;
+    int y2;
+    int z2;
 
     public Vector(int x1, int y1, int z1, int x2, int y2, int z2) {
 
@@ -16,8 +16,9 @@ public abstract class Vector {
         this.z2 = z2;
     }
 
-    abstract double getLength();
-    abstract String getVectorCords();
+    public abstract double getLength();
+
+    public abstract String getVectorCords();
 
     public int getX1() {
         return x1;
