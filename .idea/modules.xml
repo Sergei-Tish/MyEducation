@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Module 08 Practic_Week_2/Exercise 6 Vector/Exercise 6 Vector.iml" filepath="$PROJECT_DIR$/Module 08 Practic_Week_2/Exercise 6 Vector/Exercise 6 Vector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 08 Practic_Week_2/Exercise 06 Vector/Exercise 06 Vector.iml" filepath="$PROJECT_DIR$/Module 08 Practic_Week_2/Exercise 06 Vector/Exercise 06 Vector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 08 Practic_Week_2/Exercise 07 Transport/Exercise 07 Transport.iml" filepath="$PROJECT_DIR$/Module 08 Practic_Week_2/Exercise 07 Transport/Exercise 07 Transport.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module 08 Practic_Week_2/Module 08 Practic_Week_2.iml" filepath="$PROJECT_DIR$/Module 08 Practic_Week_2/Module 08 Practic_Week_2.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyEducation.iml" filepath="$PROJECT_DIR$/MyEducation.iml" />
     </modules>
