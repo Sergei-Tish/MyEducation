@@ -15,7 +15,7 @@ public class Rook extends ChessPiece {
                 chessBoard.board[toLine][toColumn].getColor().equals(this.getColor())) {
             return false;
         }
-        if (toLine == line) {
+        if (toLine == line && toColumn > column) {
             for (int i = 0; i < 8; i++) {
                 if (toColumn == (column + i)) {
                     return true;
@@ -24,7 +24,16 @@ public class Rook extends ChessPiece {
                 }
             }
         }
-        if (toColumn == column) {
+        if (toLine == line && toColumn < column) {
+            for (int i = 0; i < 8; i++) {
+                if (toColumn == (column - i)) {
+                    return true;
+                } else if (chessBoard.board[toLine][column - i] != null) {
+                    return false;
+                }
+            }
+        }
+        if (toColumn == column && toLine > line) {
             for (int i = 0; i < 8; i++) {
                 if (toLine == (line + i)) {
                     return true;
@@ -33,6 +42,16 @@ public class Rook extends ChessPiece {
                 }
             }
         }
+        if (toColumn == column && toLine > line) {
+            for (int i = 0; i < 8; i++) {
+                if (toLine == (line - i)) {
+                    return true;
+                } else if (chessBoard.board[toLine - i][toColumn] != null) {
+                    return false;
+                }
+            }
+        }
+
         return false;
     }
 

@@ -24,15 +24,16 @@ public class King extends ChessPiece {
     }
 
     public boolean isUnderAttack(ChessBoard board, int line, int column) {
+        if (!checkBorder(line, column)) return false;
         boolean result = false;
-        for (int l = 0; l < 8; l++) {
-            for (int c = 0; c < 8; c++) {
-                if (!(board.board[l][c] == null) && !board.board[l][c].getColor().equals(getColor()) && checkBorder(line, column)) {
-                    result = board.board[l][c].canMoveToPosition(board, l, c, line, column);
+        for (int forLine = 0; forLine < 8; forLine++) {
+            for (int forColumn = 0; forColumn < 8; forColumn++) {
+                if ((board.board[forLine][forColumn] != null) && !board.board[forLine][forColumn].getColor().equals(getColor())) {
+                    result = board.board[forLine][forColumn].canMoveToPosition(board, forLine, forColumn, line, column);
                 }
             }
         }
-        return !result;
+        return result;
     }
 
     @Override
