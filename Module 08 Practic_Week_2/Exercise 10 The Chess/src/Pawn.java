@@ -14,19 +14,32 @@ public class Pawn extends ChessPiece {
 
     @Override
     public boolean canMoveToPosition(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
-        if (checkBorder(toLine, toColumn) &&
+        if (!checkBorder(toLine, toColumn)) return false;
+        if (
                 chessBoard.board[toLine][toColumn] != null &&
-                chessBoard.board[toLine][toColumn].getColor().equals(this.getColor())) {
+                        chessBoard.board[toLine][toColumn].getColor().equals(this.getColor())) {
             return false;
         }
-        return checkBorder(toLine, toColumn) &&
-                ((
-                        (
-                                (line == (isWhite() ? 1 : 6) && toLine == (line + (isWhite() ? 2 : -2))) &&
-                                        chessBoard.board[toLine + (isWhite() ? 1 : -1)][toColumn] == null
-                        ) ||
-                                toLine == (line + (isWhite() ? 1 : -1))
-                ) && toColumn == column);
+        if (column == toColumn &&
+                isWhite() &&
+                line == 1 &&
+                toLine == 3 &&
+                chessBoard.board[2][column] == null) {
+            return true;
+        }
+        if (column == toColumn &&
+                !isWhite() &&
+                line == 6 &&
+                toLine == 4 &&
+                chessBoard.board[5][column] == null) {
+            return true;
+        }
+
+        if (toLine == (line + (isWhite() ? 1 : -1)) &&
+                (toColumn == (column + 1) || toColumn == (column - 1)) &&
+                !chessBoard.board[toLine][toColumn].getColor().equals(this.getColor())) {
+            return true;
+        } else return false;
     }
 
     @Override
