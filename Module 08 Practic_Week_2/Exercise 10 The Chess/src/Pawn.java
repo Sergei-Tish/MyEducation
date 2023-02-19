@@ -14,7 +14,7 @@ public class Pawn extends ChessPiece {
 
     @Override
     public boolean canMoveToPosition(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
-        System.out.println("int line " + line + ", int column " + column + ", int toLine " + toLine + ", int toColumn " + toColumn + " ");
+        //System.out.println("int line " + line + ", int column " + column + ", int toLine " + toLine + ", int toColumn " + toColumn + " ");
         if (!inBound(toLine, toColumn)) return getFalse();
         //FOR TEST//
 

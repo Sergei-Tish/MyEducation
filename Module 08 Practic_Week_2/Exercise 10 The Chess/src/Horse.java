@@ -15,8 +15,8 @@ public class Horse extends ChessPiece {
                 chessBoard.board[toLine][toColumn].getColor().equals(this.getColor())) {
             return false;
         }
-        if (inBound(toLine, toColumn) &&
-                (
+        if (
+
                                 (toLine == (line + 2) && toColumn == (column + 1)) ||
                                 (toLine == (line + 2) && toColumn == (column - 1)) ||
                                 (toLine == (line - 2) && toColumn == (column + 1)) ||
@@ -25,7 +25,7 @@ public class Horse extends ChessPiece {
                                 (toLine == (line - 1) && toColumn == (column + 2)) ||
                                 (toLine == (line + 1) && toColumn == (column - 2)) ||
                                 (toLine == (line - 1) && toColumn == (column - 2))
-                )
+
         ) {
             return true;
         } else return false;
