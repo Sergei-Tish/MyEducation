@@ -1,6 +1,7 @@
 public abstract class ChessPiece {
     String color;
     boolean check = true;
+    static boolean isDebugMode = false;
 
     public ChessPiece (String color) {
         this.color = color;
@@ -13,11 +14,11 @@ public abstract class ChessPiece {
         return toLine >= 0 && toLine <= 7 && toColumn >= 0 && toColumn <= 7;
     }
     public boolean getTrue() {
-        System.out.println(" TRUE ");
+        if (isDebugMode) System.out.println(" TRUE ");
         return true;
     }
     public boolean getFalse() {
-        System.out.println(" FALSE ");
+        if (isDebugMode) System.out.println(" FALSE ");
         return false;
     }
 }

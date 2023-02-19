@@ -11,13 +11,16 @@ public class King extends ChessPiece {
     @Override
     public boolean canMoveToPosition(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
         if (!inBound(toLine, toColumn)) return false;
+        if (chessBoard.board[line][column].getColor().equals(chessBoard.nowPlayer) && isUnderAttack(chessBoard, toLine, toColumn)) return false;
         if (chessBoard.board[toLine][toColumn] != null &&
                 chessBoard.board[toLine][toColumn].getColor().equals(this.getColor())) {
             return false;
         }
-        return
+        return (Math.abs(toLine-line) < 2 &&  Math.abs(toColumn-column) < 2);
+
+        /*return
                 (
-                        (toLine == (line + 1) && toColumn == (column + 1)) ||
+                                (toLine == (line + 1) && toColumn == (column + 1)) ||
                                 (toLine == (line + 1) && toColumn == (column - 1)) ||
                                 (toLine == (line - 1) && toColumn == (column + 1)) ||
                                 (toLine == (line - 1) && toColumn == (column - 1)) ||
@@ -26,19 +29,19 @@ public class King extends ChessPiece {
                                 (toLine == (line + 1) && toColumn == (column + 0)) ||
                                 (toLine == (line - 1) && toColumn == (column - 0))
                 );
+                */
     }
 
     public boolean isUnderAttack(ChessBoard board, int line, int column) {
         if (!inBound(line, column)) return false;
-        boolean result = false;
         for (int forLine = 0; forLine < 8; forLine++) {
             for (int forColumn = 0; forColumn < 8; forColumn++) {
                 if ((board.board[forLine][forColumn] != null) && !board.board[forLine][forColumn].getColor().equals(getColor())) {
-                    result = board.board[forLine][forColumn].canMoveToPosition(board, forLine, forColumn, line, column);
+                    if (board.board[forLine][forColumn].canMoveToPosition(board, forLine, forColumn, line, column)) return true;
                 }
             }
         }
-        return result;
+        return false;
     }
 
     @Override
