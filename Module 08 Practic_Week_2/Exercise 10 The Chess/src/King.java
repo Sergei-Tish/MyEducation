@@ -18,7 +18,8 @@ public class King extends ChessPiece {
         }
         return (Math.abs(toLine-line) < 2 &&  Math.abs(toColumn-column) < 2);
 
-        /*return
+        /* My old solution:
+        return
                 (
                                 (toLine == (line + 1) && toColumn == (column + 1)) ||
                                 (toLine == (line + 1) && toColumn == (column - 1)) ||
