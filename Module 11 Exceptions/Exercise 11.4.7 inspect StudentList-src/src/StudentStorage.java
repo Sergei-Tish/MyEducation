@@ -37,6 +37,7 @@ public class StudentStorage {
 
     public Student getStudentByName(String name) {
         try {
+            System.out.println(storage.get(name));
             return storage.get(name);
         } catch (Exception e) {
             errorExceptionPrint(4);
