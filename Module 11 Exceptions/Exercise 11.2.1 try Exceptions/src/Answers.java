@@ -3,6 +3,7 @@ import java.io.File;
 public class Answers {
     public static void main(String[] args) {
 
+
         /** Возможный код задания 11.2.1. */
 
         /** 1. Исключение ArithmeticException
