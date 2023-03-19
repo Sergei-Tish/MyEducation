@@ -1,9 +1,16 @@
 import org.w3c.dom.*;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 public class WeHaveNode implements Node {
     public static void main(String[] args) {
         Node node = new WeHaveNode();
         System.out.println(node);
+
+        List<Integer> arrList = new ArrayList<>();
+        List<Integer> linkedList = new LinkedList<>();
     }
     public String toString () {
         return "Вот и ознакомился с Node. \nИ super.toString(): " + super.toString();
