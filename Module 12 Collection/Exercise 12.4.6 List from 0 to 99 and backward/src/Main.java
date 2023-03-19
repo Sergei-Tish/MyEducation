@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 // Exercise 12.4.6 List from 0 to 99 and backward
 
@@ -21,7 +19,30 @@ public class Main {
         for (int i = 99, k = 0; i >= 0; k++, i--) {
             integerArrayList.set(k, i);
         }
+
         System.out.println(integerArrayList);
+        System.out.println(Objects.hash(integerArrayList));
+
+        List<Integer> integerList = integerArrayList;
+        System.out.println(Objects.hash(integerList));
+        main2();
+    }
+
+    public static void main2() {
+        Set<String> set = new HashSet<>();
+
+        set.add("Hello");
+        set.add("Hello again");
+        set.add("Hello");
+        set.add("22");
+        set.add("3");
+        set.add("4");
+        set.add("5");
+        set.add("6");
+        set.add("7");
+        set.add("3");
+
+        System.out.println(set);
     }
 }
 
