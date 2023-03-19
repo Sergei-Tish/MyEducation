@@ -38,6 +38,7 @@ public class Main {
 //                carList.remove(car);
 //            }
 //        }
+
 ////        carList.removeIf(car -> car.getBrand().equals(KIA));    // Автозаполнение IJ
 
         Iterator<Car> carIterator = carList.iterator();
