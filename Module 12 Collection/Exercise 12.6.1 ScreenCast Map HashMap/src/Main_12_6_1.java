@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main {
+public class Main_12_6_1 {
 
     private static final String TOYOTA = "Toyota";
     private static final String BMW = "BMW";
@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
         Car car1 = new Car(TOYOTA, "1", false);
-        Car car2 = new Car(TOYOTA, "2", false);
+        Car car2 = new Car(TOYOTA, "2", true);
         Car car3 = new Car(BMW, "3", false);
         Car car4 = new Car(KIA, "4", false);
         Car car5 = new Car(BMW, "5", false);
@@ -17,26 +17,26 @@ public class Main {
         Car car8 = new Car(BMW, "8", false);
         Car car9 = new Car(KIA, "9", false);
         Car car10 = new Car(TOYOTA, "10", false);
-        Car car11 = new Car(TOYOTA, "1", false);
-        Car car12 = new Car(TOYOTA, "2", false);
+        Car car11 = new Car(TOYOTA, "1", true);
+        Car car12 = new Car(TOYOTA, "2", true);
         Car car13 = new Car(BMW, "3", false);
-        Car car14 = new Car(KIA, "4", false);
+        Car car14 = new Car(KIA, "4", true);
         Car car15 = new Car(BMW, "5", false);
         Car car16 = new Car(TOYOTA, "6", true);
-        Car car17 = new Car(BMW, "7", false);
+        Car car17 = new Car(BMW, "7", true);
         Car car18 = new Car(BMW, "8", false);
         Car car19 = new Car(KIA, "9", false);
         Car car20 = new Car(TOYOTA, "10", false);
-        Car car21 = new Car(TOYOTA, "1", false);
+        Car car21 = new Car(TOYOTA, "1", true);
         Car car22 = new Car(TOYOTA, "2", false);
         Car car23 = new Car(BMW, "3", false);
-        Car car24 = new Car(KIA, "4", false);
+        Car car24 = new Car(KIA, "4", true);
         Car car25 = new Car(BMW, "5", false);
         Car car26 = new Car(TOYOTA, "6", true);
-        Car car27 = new Car(BMW, "7", false);
+        Car car27 = new Car(BMW, "7", true);
         Car car28 = new Car(BMW, "8", false);
         Car car29 = new Car(KIA, "9", false);
-        Car car30 = new Car(TOYOTA, "10", false);
+        Car car30 = new Car(TOYOTA, "10", true);
 
         List<Car> carList = new ArrayList<>();
         carList.add(car1);
@@ -70,41 +70,20 @@ public class Main {
         carList.add(car29);
         carList.add(car30);
 
-        Set<Car> carSet = new HashSet<>(carList);
+        Map<Car, Integer> carMap = new HashMap<>();
 
-        int countCarInCarSet = 1;
-        for (Car car: carSet) {
-            System.out.println(countCarInCarSet++ + " " + car + car.hashCode());
+        for (Car car : carList) {
+            if (carMap.containsKey(car)) {
+                int value = carMap.get(car);
+                carMap.put(car, ++value);
+            } else {
+                carMap.put(car, 1);
+            }
         }
 
-//        for (Car car :
-//                carList) {
-//            if (car.getBrand().equals(KIA)) {
-//                carList.remove(car);
-//            }
-//        }
-
-////        carList.removeIf(car -> car.getBrand().equals(KIA));    // Автозаполнение IJ
-
-//        Iterator<Car> carIterator = carList.iterator();
-//        while (carIterator.hasNext()) {
-//            Car car = carIterator.next();
-//            if (car.getBrand().equals(KIA)) {
-//                carIterator.remove();
-//            }
-//        }
-//
-//        for (Car car :
-//                carList) {
-//            if (car.getBrand().equals(TOYOTA)) {
-//                car.setOnSale(true);
-//            }
-//        }
-//        int countCarInList = 1;
-//        for (Car car :
-//                carList) {
-//            System.out.println(countCarInList++ + " " + car);
-//        }
+        for (Map.Entry<Car, Integer> carEntry : carMap.entrySet()) {
+            System.out.println(carEntry.getKey() + " = " + carEntry.getValue());
+        }
 
     }
 }
