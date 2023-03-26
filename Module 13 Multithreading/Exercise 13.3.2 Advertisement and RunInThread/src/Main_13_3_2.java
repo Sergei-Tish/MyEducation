@@ -1,4 +1,4 @@
-public class Main_13_3_2 {
+public class Main_13_3_2 extends Thread{
 
     // Lunch the show() method from the class Advertisement
     // (it's hidden) in a new Thread
@@ -8,12 +8,7 @@ public class Main_13_3_2 {
 
 
     }
-    public static void run() {
+    public void run() {
         Advertisement.show();
     }
 }
-
-class myThread  {
-
-}
-

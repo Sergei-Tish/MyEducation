@@ -1,3 +1,5 @@
 public class Advertisement extends Thread {
-    public show
+    public static void show() {
+
+    }
 }
