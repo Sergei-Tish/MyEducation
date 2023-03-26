@@ -5,10 +5,10 @@ import java.io.PrintStream;
 import java.net.Socket;
 import java.util.Scanner;
 
-class Client implements Runnable {
+class Client_for_EchoSever implements Runnable {
     Socket socket;
 
-    public Client(Socket socket){
+    public Client_for_EchoSever(Socket socket){
 
         this.socket = socket;
     }

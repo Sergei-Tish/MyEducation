@@ -12,7 +12,7 @@ public class Main_for_Client {
             Socket socket = server.accept();
             System.out.println("Client connected!");
             // создаем клиента на своей стороне
-            Client client = new Client(socket);
+            Client_for_EchoSever client = new Client_for_EchoSever(socket);
             // запускаем поток
             Thread thread = new Thread(client);
             thread.start();
