@@ -56,7 +56,7 @@ class Client implements Runnable {
 
             // читаем из сети и пишем в сеть
             out.println("Welcome to Our little chat! Your name in the chat is \"" + name + "\".");
-            out.println("If you want change your name, write command -name YOURNEWNAME");
+            out.println("If you want change your name, write command -name YOUR_NEW_NAME");
             server.sendAll("New client " + name + " connected!");
             String input = in.nextLine();
 
