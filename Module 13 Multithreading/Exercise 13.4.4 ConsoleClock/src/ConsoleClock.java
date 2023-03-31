@@ -3,9 +3,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 class ConsoleClock extends Thread{
 
-    public String getName1() {
-        return super.getName();
-    }
     int HH;
     int MM;
     int SS;
