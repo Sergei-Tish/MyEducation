@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Module 14 Thread synchronisation/Ex 14.0.0.1 repeat Module 13/Ex 14.0.0.1 repeat Module 13.iml" filepath="$PROJECT_DIR$/Module 14 Thread synchronisation/Ex 14.0.0.1 repeat Module 13/Ex 14.0.0.1 repeat Module 13.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module 08 Practic_Week_2/Exercise 06 Vector/Exercise 06 Vector.iml" filepath="$PROJECT_DIR$/Module 08 Practic_Week_2/Exercise 06 Vector/Exercise 06 Vector.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module 08 Practic_Week_2/Exercise 07 Transport/Exercise 07 Transport.iml" filepath="$PROJECT_DIR$/Module 08 Practic_Week_2/Exercise 07 Transport/Exercise 07 Transport.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module 08 Practic_Week_2/Exercise 08 Player WizardWarrior/Exercise 08 Player WizardWarrior.iml" filepath="$PROJECT_DIR$/Module 08 Practic_Week_2/Exercise 08 Player WizardWarrior/Exercise 08 Player WizardWarrior.iml" />
@@ -36,6 +37,8 @@
       <module fileurl="file://$PROJECT_DIR$/Module 13 Multithreading/Exercise 13.4.2 interrupt Thread/Exercise 13.4.2 interrupt Thread.iml" filepath="$PROJECT_DIR$/Module 13 Multithreading/Exercise 13.4.2 interrupt Thread/Exercise 13.4.2 interrupt Thread.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module 13 Multithreading/Exercise 13.4.3/Exercise 13.4.3.iml" filepath="$PROJECT_DIR$/Module 13 Multithreading/Exercise 13.4.3/Exercise 13.4.3.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module 13 Multithreading/Exercise 13.4.4 ConsoleClock/Exercise 13.4.4 ConsoleClock.iml" filepath="$PROJECT_DIR$/Module 13 Multithreading/Exercise 13.4.4 ConsoleClock/Exercise 13.4.4 ConsoleClock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 13 Multithreading/Exercise 13.6 MainOneThread 10million/Exercise 13.6 MainOneThread 10million.iml" filepath="$PROJECT_DIR$/Module 13 Multithreading/Exercise 13.6 MainOneThread 10million/Exercise 13.6 MainOneThread 10million.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 13 Multithreading/Exercise 13.8/Exercise 13.8.iml" filepath="$PROJECT_DIR$/Module 13 Multithreading/Exercise 13.8/Exercise 13.8.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module 09 Standard libraries/Exercise 9.2.1 Time Calendar/Exercise 9.2.1 Time Calendar.iml" filepath="$PROJECT_DIR$/Module 09 Standard libraries/Exercise 9.2.1 Time Calendar/Exercise 9.2.1 Time Calendar.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module 09 Standard libraries/Exercise 9.2.2 Time format/Exercise 9.2.2 Time format.iml" filepath="$PROJECT_DIR$/Module 09 Standard libraries/Exercise 9.2.2 Time format/Exercise 9.2.2 Time format.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module 09 Standard libraries/Exercise 9.4.1 JAR/Exercise 9.4.1 JAR.iml" filepath="$PROJECT_DIR$/Module 09 Standard libraries/Exercise 9.4.1 JAR/Exercise 9.4.1 JAR.iml" />
@@ -46,6 +49,7 @@
       <module fileurl="file://$PROJECT_DIR$/Module 11 Exceptions/Module 11 Exceptions.iml" filepath="$PROJECT_DIR$/Module 11 Exceptions/Module 11 Exceptions.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module 12 Collection/Module 12 Collection.iml" filepath="$PROJECT_DIR$/Module 12 Collection/Module 12 Collection.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module 13 Multithreading/Module 13 Multithreading.iml" filepath="$PROJECT_DIR$/Module 13 Multithreading/Module 13 Multithreading.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 14 Thread synchronisation/Module 14 Thread synchronisation.iml" filepath="$PROJECT_DIR$/Module 14 Thread synchronisation/Module 14 Thread synchronisation.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyEducation.iml" filepath="$PROJECT_DIR$/MyEducation.iml" />
     </modules>
   </component>
