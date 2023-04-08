@@ -11,7 +11,9 @@
       <module fileurl="file://$PROJECT_DIR$/Module 14 Thread synchronisation/Ex 14.6.1 AtomicInteger bank/Ex 14.6.1 AtomicInteger bank.iml" filepath="$PROJECT_DIR$/Module 14 Thread synchronisation/Ex 14.6.1 AtomicInteger bank/Ex 14.6.1 AtomicInteger bank.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module 14 Thread synchronisation/Ex 14.6.4 Pizzeria/Ex 14.6.4 Pizzeria.iml" filepath="$PROJECT_DIR$/Module 14 Thread synchronisation/Ex 14.6.4 Pizzeria/Ex 14.6.4 Pizzeria.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module 14 Thread synchronisation/Ex 14.6.4 Pzzeria correctly/Ex 14.6.4 Pzzeria correctly.iml" filepath="$PROJECT_DIR$/Module 14 Thread synchronisation/Ex 14.6.4 Pzzeria correctly/Ex 14.6.4 Pzzeria correctly.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Module 14 Thread synchronisation/Ex 14.60.1 concurent/Ex 14.60.1 concurent.iml" filepath="$PROJECT_DIR$/Module 14 Thread synchronisation/Ex 14.60.1 concurent/Ex 14.60.1 concurent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 14 Thread synchronisation/Ex 14.6.4.1 concurent/Ex 14.6.4.1 concurent.iml" filepath="$PROJECT_DIR$/Module 14 Thread synchronisation/Ex 14.6.4.1 concurent/Ex 14.6.4.1 concurent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 14 Thread synchronisation/Ex 14.8.1 ThreadPool/Ex 14.8.1 ThreadPool.iml" filepath="$PROJECT_DIR$/Module 14 Thread synchronisation/Ex 14.8.1 ThreadPool/Ex 14.8.1 ThreadPool.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 15 lambda functions - Stream API - Date Time API in Java/Ex 15.01.01 create ZonedDateTime/Ex 15.01.01 create ZonedDateTime.iml" filepath="$PROJECT_DIR$/Module 15 lambda functions - Stream API - Date Time API in Java/Ex 15.01.01 create ZonedDateTime/Ex 15.01.01 create ZonedDateTime.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module 08 Practic_Week_2/Exercise 06 Vector/Exercise 06 Vector.iml" filepath="$PROJECT_DIR$/Module 08 Practic_Week_2/Exercise 06 Vector/Exercise 06 Vector.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module 08 Practic_Week_2/Exercise 07 Transport/Exercise 07 Transport.iml" filepath="$PROJECT_DIR$/Module 08 Practic_Week_2/Exercise 07 Transport/Exercise 07 Transport.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module 08 Practic_Week_2/Exercise 08 Player WizardWarrior/Exercise 08 Player WizardWarrior.iml" filepath="$PROJECT_DIR$/Module 08 Practic_Week_2/Exercise 08 Player WizardWarrior/Exercise 08 Player WizardWarrior.iml" />
@@ -59,6 +61,7 @@
       <module fileurl="file://$PROJECT_DIR$/Module 12 Collection/Module 12 Collection.iml" filepath="$PROJECT_DIR$/Module 12 Collection/Module 12 Collection.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module 13 Multithreading/Module 13 Multithreading.iml" filepath="$PROJECT_DIR$/Module 13 Multithreading/Module 13 Multithreading.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module 14 Thread synchronisation/Module 14 Thread synchronisation.iml" filepath="$PROJECT_DIR$/Module 14 Thread synchronisation/Module 14 Thread synchronisation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 15 lambda functions - Stream API - Date Time API in Java/Module 15 lambda functions - Stream API - Date Time API in Java.iml" filepath="$PROJECT_DIR$/Module 15 lambda functions - Stream API - Date Time API in Java/Module 15 lambda functions - Stream API - Date Time API in Java.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyEducation.iml" filepath="$PROJECT_DIR$/MyEducation.iml" />
     </modules>
   </component>
