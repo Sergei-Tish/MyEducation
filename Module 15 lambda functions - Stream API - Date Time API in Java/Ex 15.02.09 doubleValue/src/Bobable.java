@@ -1,4 +1,4 @@
 @FunctionalInterface
-public interface Bobable {
+public interface  Bobable {
     double meBob(Number number);
 }
