@@ -3,7 +3,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class Main_Files_copy {
-
     public static void main(String[] args) {
 
 
@@ -18,5 +17,4 @@ public class Main_Files_copy {
         }
 
     }
-
 }
