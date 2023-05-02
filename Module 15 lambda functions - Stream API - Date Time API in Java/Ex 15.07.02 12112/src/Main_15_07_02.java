@@ -16,7 +16,7 @@ public class Main_15_07_02 {
         optionalLong.ifPresent(System.out::println);
 
         Stream<String> s = Stream.generate(() -> "meow");
-        boolean match = s.anyMatch(String::isEmpty);
+        boolean match = s.allMatch(String::isEmpty);
         System.out.println(match);
 
     }

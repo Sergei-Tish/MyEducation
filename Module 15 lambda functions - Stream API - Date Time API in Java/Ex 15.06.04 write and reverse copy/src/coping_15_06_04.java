@@ -29,7 +29,6 @@ public class coping_15_06_04 {
                 System.out.println(currentLine);
             }
         }
-        String str = "";
         data.sort(Comparator.reverseOrder());
 
         try (BufferedWriter writer = Files.newBufferedWriter(path2, Charset.defaultCharset(), StandardOpenOption.APPEND)) {  /**, StandardOpenOption.APPEND*/
@@ -39,9 +38,6 @@ public class coping_15_06_04 {
 
             }
         }
-        catch (IOException e) {
-            System.out.println(e);
-        }
 
         try (BufferedReader reader2 = Files.newBufferedReader(path2, StandardCharsets.US_ASCII)) { // Выбираем кодировку файла
             // читаем со стрима
@@ -49,10 +45,6 @@ public class coping_15_06_04 {
             while ((currentLine2 = reader2.readLine()) != null) {
                 System.out.println("Строка файл2 " + currentLine2);
             }
-        } catch (IOException e) {
-            // Handle file I/O exception
         }
-
-
     }
 }
