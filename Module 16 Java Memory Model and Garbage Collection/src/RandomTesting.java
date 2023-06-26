@@ -1,4 +1,4 @@
-public class RandomTesting {
+public class RandomTesting {}
 
 //aasd
     // Модуль 17 MySQL и базы данных
