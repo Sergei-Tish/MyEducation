@@ -7,3 +7,78 @@ public class Ex_18_03_01 {
     FROM
             products;
 }
+public class Ex_18_03_02 {
+    SELECT
+    name AS "Название товара",
+    price * in_stock AS "В наличии на сумму"
+    FROM
+            products;
+}
+
+public class Ex_18_04_11 {
+        /**         Напишите запрос, который будет возвращать информацию о клиенте в следующем формате:
+         * */
+
+
+
+        select
+        'Номер телефона ' || (name) || ': '
+        ||
+        CONCAT('+7-', SUBSTR(phone, 2, 3), '-', SUBSTR(phone, 5, 3), '-', SUBSTR(phone, 8, 2), '-', SUBSTR(phone, 10, 2)
+        ) AS formatted_phone
+        FROM clients;
+        }
+
+public class Задание 18.4.11 {
+        /**         Напишите запрос, который будет скрывать часть номера телефона клиента, как описано в Задании 18.4.10.
+         *      overlay \\ ИЛИ \\ substring + конкатенация       */
+    //substring + конкатенация
+        select
+        'Номер телефона ' || (name) || ': ' ||
+        substring(phone from 1 for 4) || '***' || substring(phone from 8 for 4)
+        AS formatted_phone
+        FROM clients;
+    //overlay
+        select
+        'Номер телефона ' || (name) || ': ' ||
+        overlay(phone placing '***' from 5 for 3)
+        AS formatted_phone
+        FROM clients;
+        }
+
+public class Задание 18.4.12{
+        /**         Какие id у заказов,города доставки которых заканчиваются на"ск"?     */
+        select id
+        from orders
+        where (address LIKE '%ск');
+        }
+
+public class Задание 18.4.13{
+        /**         Напишите запрос,который возвращает имена клиентов в номерах телефонов,в которых после 6следует 7,или наоборот.      */
+        SELECT name FROM clients
+        WHERE phone SIMILAR TO '%67%' OR phone similar to '%76%';
+        /** ИЛИ */
+        SELECT name FROM clients WHERE phone SIMILAR TO '%(67|76)%';
+        }
+
+public class Задание 18.4.14{
+        /**         В скольких номерах телефонов есть три или более цифры 4подряд?         */
+        select name FROM clients
+        WHERE phone SIMILAR TO '%4{3,}%';
+        }
+
+public class Задание 18.4.16 {
+        /**         Напишите запрос, который возвращает название товаров, категория которых не определена.      */
+        select name FROM products
+        WHERE category is NULL;
+        }
+public class Задание 18.5.1 {
+        /**         Напишите запрос,который возвращает все категории товаров только один раз(значение NULL не должно быть возвращено в этом запросе).       */
+        select DISTINCT category FROM products
+        WHERE IS NOT NULL;
+        }
+public class Задание 18.5.2 {
+        /**         Напишите запрос, который выводит название товаров для дома по возрастанию их цены.      */
+        select name FROM products
+        //where category = 'товары для дома'
+        ORDER BY price DESC;
