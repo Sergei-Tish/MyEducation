@@ -117,3 +117,26 @@ public class Задание 18.5.9 {
             )
         );                          }
 public class
+        /**         INNER JOIN      результаты будут получены (FROM) из двух таблиц, которые соединены по условию, которое идёт после ON.       */
+        /*           Ключевое слово INNER в запросе можно опустить.          */
+            select *
+            FROM orders
+            JOIN clients on orders.client_id = clients.id;
+
+        /**         CROSS JOIN      Декартово произведение двух множеств — это набор всех возможных пар из этих множеств.       */
+            select *
+            FROM orders
+            CROSS JOIN clients;
+
+        /**         OUTER JOIN
+         Внешнее соединение бывает нескольких видов: FULL, LEFT, RIGHT.
+         FULL OUTER JOIN), которое объединяет записи из обеих таблиц (если условие объединения равно true)
+         и дополняет их всеми записями из обеих таблиц, которые не имеют совпадений.*/
+            select *
+            FROM orders
+            FULL JOIN clients on orders.client_id = clients.id;         /**FULL*/
+
+            select *
+            FROM clients /* это левая таблица*/
+            LEFT JOIN orders on orders.client_id = clients.id;          /**LEFT*/
+         /**
