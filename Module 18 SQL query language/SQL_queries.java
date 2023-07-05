@@ -116,7 +116,7 @@ public class Задание 18.5.9 {
                 )
             )
         );                          }
-public class
+public class JOIN {
         /**         INNER JOIN      результаты будут получены (FROM) из двух таблиц, которые соединены по условию, которое идёт после ON.       */
         /*           Ключевое слово INNER в запросе можно опустить.          */
             select *
@@ -131,12 +131,60 @@ public class
         /**         OUTER JOIN
          Внешнее соединение бывает нескольких видов: FULL, LEFT, RIGHT.
          FULL OUTER JOIN), которое объединяет записи из обеих таблиц (если условие объединения равно true)
-         и дополняет их всеми записями из обеих таблиц, которые не имеют совпадений.*/
+         и дополняет их всеми записями из обеих таблиц, которые не имеют совпадений.    */
             select *
             FROM orders
             FULL JOIN clients on orders.client_id = clients.id;         /**FULL*/
 
             select *
             FROM clients /* это левая таблица*/
-            LEFT JOIN orders on orders.client_id = clients.id;          /**LEFT*/
-         /**
+            LEFT JOIN orders on orders.client_id = clients.id;          /**LEFT*/ }
+public class Задание 18.6.6 {
+        /**         В Задании 18.5.9 было необходимо написать запрос, который возвращает названия всех товаров, которые были в самом последнем (по дате) заказе.
+         *      Перепишите этот запрос с использованием JOIN.           */
+        select name
+        FROM products
+        JOIN positions on positions.product_id = products.id
+        JOIN orders on orders.id = positions.order_id
+        WHERE orders.date = (select max(date) from orders);             }
+public class Задание 18.6.7
+        /**         Напишите запрос, который возвращает идентификатор клиента, имя клиента и суммарное количество его заказов.
+         * Обязательное условие: если клиент не сделал ни одного заказа, то значение суммарного количества заказов должно быть 0.
+         * Отсортируйте результат по возрастанию.                       */
+        select clients.id, clients.name, count(orders.id)
+        from clients
+        left join orders on orders.client_id = clients.id
+        group by clients.id
+        order by clients.id;                                            }
+
+
+                            /** UNION INTERSECT EXCEPT */
+public class Задание 18.7.1 {
+        /**         Напишите 2 варианта запроса, который возвращает все заказы со статусом «Выполнено» и «На доставке».         */
+        select id, status from orders where status in ('done')
+        union
+        select id, status from orders where status in ('delivery');     }
+public class Задание 18.7.2 {
+        /** получить номера телефонов и номера заказов для клиентов, которые заказывали товар с идентификатором 1 и тех,
+         * кто указал в адресе доставки Казань. Используйте UNION для написания запроса.    */
+/*МОЁ*/ select clients.phone, orders.id
+        from clients, orders
+        join positions on positions.order_id = orders.id
+        where positions.product_id = 1 and orders.client_id = clients.id
+        UNION
+        select clients.phone, orders.id
+        from clients, orders
+        where orders.address in ('Казань') and orders.client_id = clients.id ;
+
+/*ответ*/select phone, tmp.order_id
+        from clients
+        join (
+        select orders.id as order_id, client_id
+        from orders
+        join positions on positions.order_id = orders.id
+        where positions.product_id = 1
+        union
+        select orders.id, client_id
+        from orders
+        where address = 'Казань'
+        ) as tmp on tmp.client_id = clients.id;                         }
