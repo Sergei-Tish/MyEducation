@@ -92,3 +92,56 @@
         where id not in (
             select orders.client_id
             from orders );                          }
+
+                                                    /**     19.4    */
+Задание 19.4.1 {
+        /**         Создайте таблицу users уникальным идентификатором (первичный ключ) и именем клиента (не может быть NULL).*/
+        CREATE TABLE users (        id serial PRIMARY KEY,      name varchar(40) NOT null   );                      }
+Задание 19.4.5 {
+        /**         Выполните запрос и проверьте, что обе таблицы были удалены. Удалите таблицу favorite_films.         */
+        DROP
+            TABLE films,
+            users CASCADE;
+        DROP
+            TABLE favorite_films;                   }
+Задание 19.4.7 {
+        /**         Удалите ограничение NOT NULL для колонки с адресом в таблице с заказами.                            */
+        alter table orders
+            alter column address
+                drop not null ; /* or DEFAULT */    }
+Задание 19.4.8 {
+        /**         Создайте таблицу aircrafts с идентификатором и именем самолёта (типы serial и varchar).             */
+        create table aircrafts (
+            id serial primary key,
+            name varchar (100)
+        );
+        /**         Создайте вторую таблицу с маршрутами.                                                               */
+        create table routes (
+            id serial primary key,
+            aircraft_id integer references aircrafts(id) on update restrict,
+            _from character varying (100),
+            _to character varying (100)
+        );
+        /**         Заполните обе таблицы данными.                                                                      */
+        insert into aircrafts (name)
+        values
+        ('su 1234'),
+        ('air455'),
+        ('boing 234'),
+        ('boing 678');
+        insert into routes ("aircraft_id","_from", "_to")
+        values (1, 'Russia', 'France'),
+        (2, 'Israel','Russia'),
+        (3, 'Germany','Australia'),
+        (4, 'Russia','Thailand');
+        /**         Напишите запрос, который удаляет ограничение для вторичного ключа.                                  */
+        alter table routes
+        drop constraint routes_aircraft_id_fkey;
+        /**       Теперь вам нужно заново создать ссылку на таблицу aircrafts, но уже с политикой каскадного обновления.*/
+        alter table routes
+            add constraint routers_fk foreign key (aircraft_id) references aircrafts on update cascade;
+        /**         Теперь обновите значение идентификатора для записи с идентификатором 1 так, чтобы он стал равен 101.*/
+         update aircrafts
+                set id = 101
+                where id = 1;                       }
+
