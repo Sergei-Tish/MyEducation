@@ -78,8 +78,8 @@
          *      То есть, если в заказе был один велосипед, то после выполнения запросов их должно стать 2 и т.д.
          *      Проверьте, что всё отработало корректно, с помощью запроса из предыдущего задания.                      */
         update positions
-        set amount = amount + 1
-        where product_id = 1;                       } /* = (SELECT id FROM products WHERE name = 'Велосипед горный' );  */
+            set amount = amount + 1
+            where product_id = 1;                       } /* = (SELECT id FROM products WHERE name = 'Велосипед горный' );  */
 Задание 19.3.11 {
         /**         Напишите запрос, который возвращает имена всех клиентов, которые не совершали заказов.              */
         select * from clients
@@ -124,24 +124,44 @@
         );
         /**         Заполните обе таблицы данными.                                                                      */
         insert into aircrafts (name)
-        values
-        ('su 1234'),
-        ('air455'),
-        ('boing 234'),
-        ('boing 678');
+            values
+                ('su 1234'),
+                ('air455'),
+                ('boing 234'),
+                ('boing 678');
         insert into routes ("aircraft_id","_from", "_to")
-        values (1, 'Russia', 'France'),
-        (2, 'Israel','Russia'),
-        (3, 'Germany','Australia'),
-        (4, 'Russia','Thailand');
+        values  (1, 'Russia', 'France'),
+                (2, 'Israel','Russia'),
+                (3, 'Germany','Australia'),
+                (4, 'Russia','Thailand');
         /**         Напишите запрос, который удаляет ограничение для вторичного ключа.                                  */
         alter table routes
-        drop constraint routes_aircraft_id_fkey;
+            drop constraint routes_aircraft_id_fkey;
         /**       Теперь вам нужно заново создать ссылку на таблицу aircrafts, но уже с политикой каскадного обновления.*/
         alter table routes
             add constraint routers_fk foreign key (aircraft_id) references aircrafts on update cascade;
         /**         Теперь обновите значение идентификатора для записи с идентификатором 1 так, чтобы он стал равен 101.*/
-         update aircrafts
-                set id = 101
-                where id = 1;                       }
+        update aircrafts
+            set id = 101
+            where id = 1;                           }
 
+
+                /**         6/10  19.5.         ТРАНЗАКЦИИ          */
+        Задание 19.5.2 {
+    /** Исправьте запрос на добавление, пусть каждого товара будет добавлено по 10 штук.
+     * Добавьте наушники и зеркало в таблицу. Сделайте COMMIT. После этого добавьте рюкзак и выполните ROLLBACK.        */
+        INSERT INTO products (name, price, category, in_stock)
+        VALUES
+        ('Наушники', 2000, 'техника', 10);
+        INSERT INTO products (name, price, category, in_stock)
+        VALUES
+        ('Зеркало', 700, 'товары для дома', 10);
+        INSERT INTO products (name, price, category, in_stock)
+        VALUES
+        ('Рюкзак', 6000, 'спорт', 10);
+
+        select * from products p ;
+        delete from products where id in (19);      } // удалил "набор посуды" который неясно что тут забыл
+
+
+                /**             19.6.       Нормальные формы БД       */
