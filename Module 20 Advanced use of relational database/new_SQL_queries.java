@@ -60,6 +60,37 @@
         CREATE MATERIALIZED VIEW products_for_5 AS
         "+ Задание 20.3.7"                                                                                          }
 
+Задание 20.4.1 {
+        "Для того чтобы просто выполнить код на языке PL/pgSQL, без объявления процедуры, используется do-блок:"
+        DO $$ DECLARE i INTEGER;
+        BEGIN FOR i IN 1..10
+            LOOP EXECUTE (
+                'create table temp_table_' || i || '(id int, title varchar(100));'
+            );
+            END LOOP;
+        END $$;
+
+                    /**     Напишите код, который удалит созданные таблицы. */
+        DO $$ DECLARE i INTEGER;
+        BEGIN FOR i IN 1..10
+            LOOP EXECUTE (
+                'DROP table temp_table_' || i || ';'
+            );
+            END LOOP;
+        END $$;
+
+        /**     Давайте создадим процедуру с именем create_table: */
+        CREATE OR REPLACE
+            PROCEDURE create_table(name TEXT) AS $$ BEGIN EXECUTE (
+                'create table ' || name || '(str varchar(100));'
+            );
+        END $$ LANGUAGE 'plpgsql';
+        /**     Для того чтобы вызвать процедуру, используется инструкция CALL: */
+         DO $$ BEGIN CALL create_table('tmp_table' :: TEXT);
+        END $$;
+
+
+
 
 
 
