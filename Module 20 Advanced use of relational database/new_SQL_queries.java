@@ -79,18 +79,44 @@
             END LOOP;
         END $$;
 
-        /**     Давайте создадим процедуру с именем create_table: */
+                /**     Давайте создадим процедуру с именем create_table: */
         CREATE OR REPLACE
             PROCEDURE create_table(name TEXT) AS $$ BEGIN EXECUTE (
                 'create table ' || name || '(str varchar(100));'
             );
         END $$ LANGUAGE 'plpgsql';
-        /**     Для того чтобы вызвать процедуру, используется инструкция CALL: */
+                /**     Для того чтобы вызвать процедуру, используется инструкция CALL: */
          DO $$ BEGIN CALL create_table('tmp_table' :: TEXT);
         END $$;
 
+Задание 20.4.3 {
+        Напишите хранимую процедуру со следующей логикой работы:
+
+        1./** Объявите локальную переменную типа TEXT.                                              */
+        2./** В качестве аргумента процедура должна принимать имя таблицы.                          */
+        3./** Первым действием удалите таблицу с таким именем, если она уже существует.             */
+        4./** После этого создайте таблицу с указанным именем и одним столбцом типа varchar(100).   */
+        5./** Вызовите функцию gen_abra_cadabra и результат сохраните в локальной переменной.       */
+        6./** Для наглядности можете напечатать в output значение переменной.                       */
+        7./** Добавьте значение из локальной переменной в базу с помощью команды INSERT.            */
+        8./** Вызовите созданную процедуру и убедитесь, что она отработала правильно.               */
 
 
+        create or replace procedure my_create_table (input_text TEXT) as
+        $$
+        declare local_text TEXT;
+        begin
+            execute ('drop table if exists '|| input_text || ';');
+            execute ('create table '|| input_text || ' (str varchar(100));');
+            local_text = gen_abra_cadabra(20);
+            RAISE notice '%', local_text;
+            execute ('insert into '|| input_text || ' (str)
+                values (''' || local_text || ''');');
+        end $$ language 'plpgsql';
+
+        do $$ begin
+            call my_create_table('my_table_name');
+        end $$;
 
 
 
