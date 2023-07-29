@@ -118,6 +118,47 @@
             call my_create_table('my_table_name');
         end $$;
 
+Задание 20.4.4,5 {
+        DO $$ DECLARE rec RECORD;
+        BEGIN FOR rec IN
+        SELECT id, name, phone
+        FROM clients
+        ORDER BY name DESC
+        LOOP
+            RAISE NOTICE 'id = %, name = %, phone = %',
+                rec.id,
+                rec.name,
+                rec.phone;
+        END LOOP;
+        END $$;                                             }
+        /** Конструкция FOR ... IN ... LOOP в PostgreSQL используется для итерации по результатам выполнения запроса.   */
+
+Задание 20.4.5 Что делает код ниже? {
+        DO $$ DECLARE r RECORD;
+        cnt INT;
+        BEGIN FOR r IN
+        SELECT address
+        FROM orders
+        WHERE
+            status = 'in progress' LOOP EXECUTE 'select count(*) cnt FROM ' || r.address INTO cnt;
+        RAISE NOTICE '% %',
+            r.address,
+            cnt;
+        END LOOP;
+        END $$;                                                 }
+        /**         Печатает имена таблиц в схеме public и количество записей в них                 */
+
+Задание 20.4.7 Удалите все процедуры и функции, которые были созданы в рамках модуля. {
+        do $$ begin
+            drop procedure create_table;
+            drop procedure my_create_table;
+            drop function check_in_stock;
+            drop function gen_abra_cadabra;
+        end $$;                                             }
+
+
+
+
 
 
 
