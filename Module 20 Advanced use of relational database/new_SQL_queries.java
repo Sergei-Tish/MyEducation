@@ -156,7 +156,19 @@
             drop function gen_abra_cadabra;
         end $$;                                                 }
 
+Задание 20.4.8  /**     Добавьте в таблицу с заказами поле date_changed.
+        *       Записывайте туда текущее время каждый раз, когда меняется значение какого либо поля в строке. */
+        alter table orders add column date_changed (date);
+        create or replace procedure date_change_update (order_id_input int) as
+        $$
+        begin
+        execute ('UPDATE orders SET date_changed = now()
+        WHERE orders.id = order_id_input');
+        end $$ lenguage 'plpgsql';
 
+        create or replace trigger update_order_date
+        after update on orders
+        execute procedure date_change_update();
 
 
 
