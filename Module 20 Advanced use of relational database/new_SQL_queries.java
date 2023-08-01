@@ -162,8 +162,7 @@
         create or replace procedure date_change_update (order_id_input int) as
         $$
         begin
-        execute ('UPDATE orders SET date_changed = now()
-        WHERE orders.id = order_id_input');
+            execute ('UPDATE orders SET date_changed = now() WHERE orders.id = order_id_input');
         end $$ lenguage 'plpgsql';
 
         create or replace trigger update_order_date
