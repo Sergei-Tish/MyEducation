@@ -130,7 +130,7 @@
                 rec.name,
                 rec.phone;
         END LOOP;
-        END $$;                                             }
+        END $$;                                                 }
         /** Конструкция FOR ... IN ... LOOP в PostgreSQL используется для итерации по результатам выполнения запроса.   */
 
 Задание 20.4.5 Что делает код ниже? {
@@ -154,7 +154,7 @@
             drop procedure my_create_table;
             drop function check_in_stock;
             drop function gen_abra_cadabra;
-        end $$;                                             }
+        end $$;                                                 }
 
 
 
