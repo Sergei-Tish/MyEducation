@@ -87,7 +87,7 @@
         END $$ LANGUAGE 'plpgsql';
                 /**     Для того чтобы вызвать процедуру, используется инструкция CALL: */
          DO $$ BEGIN CALL create_table('tmp_table' :: TEXT);
-        END $$;
+        END $$;                                             }
 
 Задание 20.4.3 {
         Напишите хранимую процедуру со следующей логикой работы:
@@ -116,7 +116,7 @@
 
         do $$ begin
             call my_create_table('my_table_name');
-        end $$;
+        end $$;                                                 }
 
 Задание 20.4.4,5 {
         DO $$ DECLARE rec RECORD;
@@ -156,7 +156,7 @@
             drop function gen_abra_cadabra;
         end $$;                                                 }
 
-Задание 20.4.8  /**     Добавьте в таблицу с заказами поле date_changed.
+Задание 20.4.8 { /**     Добавьте в таблицу с заказами поле date_changed.
         *       Записывайте туда текущее время каждый раз, когда меняется значение какого либо поля в строке. */
         alter table orders add column date_changed (date);
         create or replace procedure date_change_update (order_id_input int) as
@@ -167,7 +167,51 @@
 
         create or replace trigger update_order_date
         after update on orders
-        execute procedure date_change_update();
+        execute procedure date_change_update();                 }
+/** RIGHT VERSION */
+Задание 20.4.8 {
+            /** Добавьте в таблицу с заказами поле date_changed. Записывайте туда текущее время каждый раз, когда меняется значение какого либо поля в строке. */
+        alter table orders add column date_changed TIMESTAMP default '2023-01-01 00:00:00';
+        create or replace FUNCTION date_change_update () RETURNS TRIGGER AS
+        $$
+            BEGIN
+                NEW.date_changed = now();
+                RETURN NEW;
+            end;
+        $$ language 'plpgsql';
+
+        create or replace trigger update_order_date
+                BEFORE update on orders
+                for each row
+            execute procedure date_change_update();
+
+        /**     проверка работает ли */
+        insert into orders (client_id, date, status, address)
+            values (4, '2021-02-02', 'in progress', 'Барнаул');
+        UPDATE orders
+            set status = 'delivery'
+        where id = 17;                                          }
+
+Задание 20.5.1 -- Напишите запрос, который получает название категории и среднюю стоимость товаров в ней.
+    select category, avg(price)
+    from products
+    group by category ;
+
+Задание 20.5.2 -- Напишите запрос, который возвращает идентификаторы клиентов и среднюю стоимость их заказов.
+    select client_id, avg(order_sum.order_price) as avg_order_price
+    from (
+        select pos.order_id, sum(pos.amount * prod.price) as order_price
+        from positions pos
+        join products prod on prod.id = pos.product_id
+        group by pos.order_id
+    ) as order_sum
+        join orders on orders.id = order_sum.order_id
+    group by client_id
+    order by avg_order_price desc;
+
+
+
+
 
 
 
