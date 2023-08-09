@@ -171,43 +171,190 @@
 /** RIGHT VERSION */
 Задание 20.4.8 {
             /** Добавьте в таблицу с заказами поле date_changed. Записывайте туда текущее время каждый раз, когда меняется значение какого либо поля в строке. */
-        alter table orders add column date_changed TIMESTAMP default '2023-01-01 00:00:00';
-        create or replace FUNCTION date_change_update () RETURNS TRIGGER AS
+        // alter table orders add column date_changed TIMESTAMP default '2023-01-01 00:00:00';
+        /* create or replace FUNCTION date_change_update () RETURNS TRIGGER AS
         $$
             BEGIN
                 NEW.date_changed = now();
                 RETURN NEW;
             end;
-        $$ language 'plpgsql';
-
+        $$ language 'plpgsql'; */
+/*
         create or replace trigger update_order_date
                 BEFORE update on orders
                 for each row
             execute procedure date_change_update();
-
-        /**     проверка работает ли */
+*/
+        /**     проверка работает ли */ /*
         insert into orders (client_id, date, status, address)
             values (4, '2021-02-02', 'in progress', 'Барнаул');
         UPDATE orders
             set status = 'delivery'
-        where id = 17;                                          }
+        where id = 17;     */                                     }
 
-Задание 20.5.1 -- Напишите запрос, который получает название категории и среднюю стоимость товаров в ней.
+Задание 20.5.1 - Напишите запрос, который получает название категории и среднюю стоимость товаров в ней.
     select category, avg(price)
     from products
     group by category ;
 
-Задание 20.5.2 -- Напишите запрос, который возвращает идентификаторы клиентов и среднюю стоимость их заказов.
-    select client_id, avg(order_sum.order_price) as avg_order_price
-    from (
-        select pos.order_id, sum(pos.amount * prod.price) as order_price
-        from positions pos
-        join products prod on prod.id = pos.product_id
-        group by pos.order_id
-    ) as order_sum
-        join orders on orders.id = order_sum.order_id
-    group by client_id
-    order by avg_order_price desc;
+
+Предложение WITH - на примере 20.5.1
+    WITH avg_prices AS (
+        SELECT category,
+        AVG(price) AS avg_price
+        FROM products
+        GROUP BY category
+    )
+    SELECT
+        MAX(avg_price)
+    FROM
+        avg_prices;
+
+Задание 20.5.2  /** Напишите запрос, который возвращает идентификаторы клиентов и среднюю стоимость их заказов.        */
+        select client_id, avg(order_sum.order_price) as avg_order_price
+        from (
+            select pos.order_id, sum(pos.amount * prod.price) as order_price
+            from positions pos
+                join products prod on prod.id = pos.product_id
+            group by pos.order_id
+        ) as order_sum
+            JOIN orders on orders.id = order_sum.order_id
+        group by client_id
+        order by avg_order_price desc;
+
+Задание 20.5.3 /** - Перепишите */ Задание 20.5.2 /** с использованием WITH следующий запрос:                           */
+        WITH order_sum as (
+            SELECT pos.order_id, sum(pos.amount * prod.price) as order_price
+            FROM positions pos
+                JOIN products prod on prod.id = pos.product_id
+            group by pos.order_id
+        )
+        SELECT
+            client_id,
+            avg(order_sum.order_price) as avg_order_price
+        FROM
+            order_sum
+        JOIN
+            orders on orders.id = order_sum.order_id
+        group by client_id
+        order by avg_order_price desc;
+
+
+
+
+
+
+
+
+
+Модель 20 часть 6. /**      Итоговое задание
+        *    Давайте разработаем базу данных системы для бронирования отелей.       */
+    create table hotels (
+    	id serial primary key,
+    	name varchar(30) not NULL,
+    	address varchar (100) not NULL,
+    	rating int default 'no data');
+    create table room_type (
+    	id serial primary key,
+    	hotel_id int not null references hotels(id),
+    	name varchar(30) not null
+    		check (name in ('lux', 'comfort', 'econom'))
+    		?????,
+    	total_count int not null
+    		check (total_count >= 0)
+    		????????,
+    	price_per_night money not null
+    		constraint positive_price_per_night
+    			check (price_per_night >= 0 :: money),
+    	number_of_beds int
+    		check (number_of_beds >= 0 and nuber_of_beds <= 30),
+    	description varchar(200)
+    );
+    create table clients (
+    	id serial primary key,
+    	first_name varchar(30) not null,
+    	surname varchar(30) not null,
+    	second_name varchar(30),
+    	passport_number varchar(30)
+    );
+    create table reservations (
+    	id serial primary key,
+    	client_id int not null references clients(id),
+    	room_type_id int not null references room_type(id),
+    	from date not null,
+    	to date,
+    	status varchar(30) not null
+    		constraint status_check check (
+    			status in ('PAYMENT_PENDING', 'PAID', 'CANCELLED', 'CLOSED'))
+    );
+    create table services (
+    	id serial primary key,
+    	name varchar(30) not null,
+    	price money
+    		check (price >= 0)
+    );
+    create table service_booked (
+    	reservation_id int references reservations(id),
+    	service_id int references services(id)
+    );
+
+
+/* */
+INSERT INTO hotels (name, address, rating)
+VALUES
+	('Центр-Отель', 'г. Симферополь, ул. Горького, 19', 8),
+	('Plasa', 'г. Город, ул. Ленина, 1', 9),
+	('Hostel Fun', 'г. Урюпинск, ул. Задворкина, 153б', 6),
+	('Amparo', 'Mexico, San Miguel de Allende', 10),
+	('у бабы Люды', 'Крым, г. Ялта, ул. Лесная, 11', 3),
+	('Hilton Leningradskaya', 'Каланчёвская ул., 21/40', 8)
+;
+
+/* 	остальные таблицы заполнены как на сайте указали */
+
+Задание 20.6.7
+	Напишите запрос, который возвращает информацию обо всех бронированиях за 2019 год.
+	/*	select *
+		from reservations
+		where
+			start_date >= '2019-01-01' AND start_date <= '2019-12-31';
+	*/
+Задание 20.6.8
+	Напишите запрос, который будет возвращать имена клиентов и названия отелей, в которых они когда-либо осуществляли бронирование.
+	/** я перемудрил */
+	{with cl_rt AS (
+		select cl.id as client_id, res.room_type_id
+		from clients cl
+			join reservations res on cl.id = res.client_id
+	)
+	select distinct
+		cl.first_name as client_name,
+		cl.surname as client_surname,
+		hot.name as hotel_name
+	from room_type rt
+		join cl_rt on rt.id = cl_rt.room_type_id
+		join clients cl on cl.id = cl_rt.client_id
+		join hotels hot on hot.id = rt.hotel_id
+	;}
+	/** ответ из учебника */
+{ 	SELECT
+	  clients.first_name,
+	  clients.second_name,
+	  clients.surname,
+	  hotels.name AS hotel
+	FROM
+	  reservations
+	  JOIN clients ON client_id = clients.id
+	  JOIN room_type ON room_type_id = room_type.id
+	  JOIN hotels ON room_type.hotel_id = hotels.id;
+}
+
+Задание 20.6.9
+		Напишите запрос, который будет возвращать имя отеля и суммарную стоимость заказанных сервисов в нём.
+	Например, если в отеле было заказано три ужина, и каждый стоил по 20 рублей, то
+	для этого отеля будет возвращено значение 60.
+
+
 
 
 
