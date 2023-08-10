@@ -350,10 +350,86 @@ VALUES
 }
 
 Задание 20.6.9
-		Напишите запрос, который будет возвращать имя отеля и суммарную стоимость заказанных сервисов в нём.
-	Например, если в отеле было заказано три ужина, и каждый стоил по 20 рублей, то
-	для этого отеля будет возвращено значение 60.
+			Напишите запрос, который будет возвращать имя отеля и суммарную стоимость заказанных сервисов в нём.
+		Например, если в отеле было заказано три ужина, и каждый стоил по 20 рублей, то
+		для этого отеля будет возвращено значение 60.
+	select
+		h."name" ,
+		sum(s.price)
+	from
+		hotels h
+		join room_type rt on rt.hotel_id = h.id
+		join reservations r on r.room_type_id = rt.id
+		join services_booked sb on sb.reservation_id = r.id
+		join services s on s.id = sb.service_id
+	group by h.id;
 
+
+Задание 20.6.10
+			Напишите запрос, который будет возвращать имя отеля и количество завершённых (closed) заказов в нём.
+
+	select
+		h."name",
+		count(r.status)
+	from
+		hotels h
+		join room_type rt on rt.hotel_id = h.id
+		join reservations r on r.room_type_id = rt.id
+		join services_booked sb on sb.reservation_id = r.id
+		join services s on s.id = sb.service_id
+		join clients c on c.id = r.client_id
+	where r.status = 'CLOSED'
+	group by h."name";
+
+
+Задание 20.6.11
+			Напишите запрос, который возвращает информацию обо всех сервисах, которые бронировал Василий Сергеевич Пупкин.
+
+	select
+		c.first_name,
+		c.second_name ,
+		c.surname ,
+		s.*
+	from
+		hotels h
+		join room_type rt on rt.hotel_id = h.id
+		join reservations r on r.room_type_id = rt.id
+		join services_booked sb on sb.reservation_id = r.id
+		join services s on s.id = sb.service_id
+		join clients c on c.id = r.client_id
+	where c.surname in ('Пупкин')
+	group by
+		c.first_name, c.second_name, c.surname, s.id;
+
+
+
+Задание 20.6.12
+			Создайте представление для запроса, который возвращает информацию обо всех заказах отеля "Центр-Отель".
+
+	create view orders_hotel_id1 AS
+	select
+		r.*
+	from
+		hotels h
+		join room_type rt on rt.hotel_id = h.id
+		join reservations r on r.room_type_id = rt.id
+		join services_booked sb on sb.reservation_id = r.id
+		join services s on s.id = sb.service_id
+		join clients c on c.id = r.client_id
+	where h."name" like 'Центр-Отель'
+	group by
+		r.id;
+
+
+Задание 20.6.13
+			Напишите запрос, который изменит статус всех бронирований с PAID на CLOSED.
+
+	update
+		reservations as r
+ 	set
+ 		r.status = 'CLOSED'
+	where
+		r.status = 'PAID';
 
 
 
