@@ -172,25 +172,25 @@
 Задание 20.4.8 {
             /** Добавьте в таблицу с заказами поле date_changed. Записывайте туда текущее время каждый раз, когда меняется значение какого либо поля в строке. */
         // alter table orders add column date_changed TIMESTAMP default '2023-01-01 00:00:00';
-        /* create or replace FUNCTION date_change_update () RETURNS TRIGGER AS
+         create or replace FUNCTION date_change_update () RETURNS TRIGGER AS
         $$
             BEGIN
                 NEW.date_changed = now();
                 RETURN NEW;
             end;
-        $$ language 'plpgsql'; */
-/*
+        $$ language 'plpgsql';
+
         create or replace trigger update_order_date
                 BEFORE update on orders
                 for each row
             execute procedure date_change_update();
-*/
-        /**     проверка работает ли */ /*
+
+        /**     проверка работает ли */
         insert into orders (client_id, date, status, address)
             values (4, '2021-02-02', 'in progress', 'Барнаул');
         UPDATE orders
             set status = 'delivery'
-        where id = 17;     */                                     }
+        where id = 17;                                         }
 
 Задание 20.5.1 - Напишите запрос, который получает название категории и среднюю стоимость товаров в ней.
     select category, avg(price)
@@ -314,11 +314,11 @@ VALUES
 
 Задание 20.6.7
 	Напишите запрос, который возвращает информацию обо всех бронированиях за 2019 год.
-	/*	select *
+		select *
 		from reservations
 		where
 			start_date >= '2019-01-01' AND start_date <= '2019-12-31';
-	*/
+
 Задание 20.6.8
 	Напишите запрос, который будет возвращать имена клиентов и названия отелей, в которых они когда-либо осуществляли бронирование.
 	/** я перемудрил */
