@@ -1,6 +1,6 @@
 import org.apache.commons.lang3.StringUtils;
 
-public class Main {
+public class MainMy1 {
     public static void main(String[] args) {
         System.out.println(StringUtils.upperCase("Hello!"));
     }
@@ -11,7 +11,7 @@ public class Main {
 
 
 
-/*
+/* work
 Задание 21.1.2
         Чтобы лучше понять процесс ручной сборки, скомпилируйте и запустите проект самостоятельно. Для этого выполните следующие действия:
 
