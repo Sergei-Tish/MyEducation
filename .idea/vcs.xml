@@ -4,5 +4,7 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Module 16 plus MyEducationRolePlayingGame" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/MyEducationRolePlayingGame" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/SF_Mod210603_MojoAndPlugin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/SF_Mod210701_MojoAndPlugin" vcs="Git" />
   </component>
 </project>
