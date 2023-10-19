@@ -13,3 +13,4 @@ public class MainMy1 {
 // work in 22.2
 // 23 review NoSQL
 // work in 23.2 Redis
+// work in 23.3 Hazelcast
