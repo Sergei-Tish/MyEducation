@@ -1,7 +1,6 @@
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
-import com.hazelcast.flakeidgen.FlakeIdGenerator;
-
+import com.hazelcast.core.IdGenerator;
 
 import java.util.Map;
 
@@ -9,9 +8,9 @@ public class ServerNode {
     public static void main(String[] args) {
         HazelcastInstance hazelcastInstance = Hazelcast.newHazelcastInstance();
         Map<Long, String> map = hazelcastInstance.getMap("data");
-        FlakeIdGenerator idGenerator = hazelcastInstance.getFlakeIdGenerator("newid");
-        for (int i = 0; i< 20; i++) {
-            map.put(idGenerator.newId(), "massage_" + i);
+        IdGenerator idGenerator = hazelcastInstance.getIdGenerator("newid");
+        for (int i = 0; i < 20; i++) {
+            map.put(idGenerator.newId(), "message" + i);
         }
     }
 }
