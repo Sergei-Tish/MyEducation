@@ -14,3 +14,4 @@ public class MainMy1 {
 // 23 review NoSQL
 // work in 23.2 Redis
 // work in 23.3 Hazelcast
+// work in 24 MongoDB
