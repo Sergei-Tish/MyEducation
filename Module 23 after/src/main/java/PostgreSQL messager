@@ -1,0 +1,85 @@
+create or replace function func_create_row_in_passwords()
+returns trigger as $$ begin
+	insert into "passwords"("id_user","pass_hash") values (NEW.id, NULL);
+	return new;
+end;
+$$ LANGUAGE plpgsql;
+
+create or replace trigger trigger_added_user
+after insert on users
+for each row
+execute procedure func_create_row_in_passwords();
+
+CREATE OR REPLACE FUNCTION func_delete_row_in_passwords()
+RETURNS TRIGGER AS $$ BEGIN
+	DELETE FROM "passwords" WHERE id_user = OLD.id;
+	RETURN null;
+END $$
+LANGUAGE plpgsql;
+
+CREATE OR REPLACE TRIGGER trigger_delete_user
+BEFORE DELETE ON users
+FOR EACH row
+EXECUTE PROCEDURE func_delete_row_in_passwords();
+
+INSERT INTO users(surname, name, email) VALUES
+	('Testerov', 'Tester', 'test@test.ru'),
+	('Viking', 'Eric', 'Eric@north.se'),
+	('Viking', 'Olaf', 'Olaf@north.se'),
+	('Viking', 'Baleog', 'Baleog@north.se'),
+	('ТипичнаяФамилия', 'ТипичноеИмя', 'typical@typical.ru'),
+	('Проверка_Поля_на_достаточно_длинную_и_нестандартную_фамилию',
+		'такое_же_длинное_имя_с_нестандартными_символами_#!@$#?\_вот',
+		'почта@русская.ру')
+;
+
+SELECT * FROM users; 		--содержит всех пользователей от 1-20
+SELECT * FROM passwords;	--содержит все пароли от 1-20
+
+DELETE FROM users WHERE id >= 8;	--учитывая триггер и функцию должен удалить и из users и из passwords
+
+SELECT * FROM users;		--снова содержит пользователей от 1-20
+SELECT * FROM passwords;	--уже содержит пароли от 1-7
+
+
+--ОТРЕДАКТИРОВАННАЯ ФУНКЦИЯ func_delete_row_in_passwords()
+CREATE OR REPLACE FUNCTION func_delete_row_in_passwords()
+RETURNS TRIGGER AS $$ BEGIN
+	DELETE FROM "passwords" WHERE id_user = OLD.id;
+	PDATE users SET name = 'пользователь удалён', surname = 'пользователь удалён', email = 'пользователь удалён' WHERE id = OLD.id;
+	RETURN null;
+END $$
+LANGUAGE plpgsql;
+
+--ЗАПОЛНЕНИЕ messager
+insert into passwords (id_user, pass_hash) select id, 'this is hash for user ' || (select users.id) || ', take this'
+FROM users
+LIMIT 100;
+
+select * from messager;
+select * from passwords ORDER BY id_user;
+select * from users ORDER BY id;
+
+DELETE FROM users WHERE users.id >= 8;
+--delete from passwords where pass_hash is null;
+
+insert into messager (id_sender, id_recipient, text_message, date_sent)
+values (2,3,'I love you', NOW());
+insert into messager (id_sender, id_recipient, text_message, date_sent)
+values (2,3,'YES! My MONKEY!!', NOW());
+insert into messager (id_sender, id_recipient, text_message, date_sent)
+values (2,4,'I hate you', NOW());
+insert into messager (id_sender, id_recipient, text_message, date_sent)
+values (5,3,'NO! pls NO!!!', NOW());
+insert into messager (id_sender, id_recipient, text_message, date_sent)
+values (3,6,'I duck you', NOW());
+insert into messager (id_sender, id_recipient, text_message, date_sent)
+values (7,6,'What!? why are u doing there!!', NOW());
+
+--выбрать сообщения определенного пользователя
+select u1.name as "имя отправителя", u2.name as "имя получателя", text_message as "текст сообщения", to_char(date_sent, 'DD Month YYYY года в HH24:MI') as "дата отправки"
+from messager
+JOIN users u1 ON u1.id = messager.id_sender
+JOIN users u2 ON u2.id = messager.id_recipient
+where id_sender = 2
+order by messager.date_sent;
