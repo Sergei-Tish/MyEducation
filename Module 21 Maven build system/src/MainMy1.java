@@ -3,6 +3,10 @@ public class MainMy1 {
         System.out.println(
                 "Hello world!"
         );
+        double a = 2.0;
+        double b = 1.1;
+        System.out.println(a-b);
+
     }
 }
 
@@ -15,3 +19,4 @@ public class MainMy1 {
 // work in 23.2 Redis
 // work in 23.3 Hazelcast
 // work in 24 MongoDB
+// проходил Модуль "Центр карьеры"
