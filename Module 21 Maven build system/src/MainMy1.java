@@ -23,3 +23,4 @@ public class MainMy1 {
 // work in 24.1. Знакомство с Gradle
 // 24.3. Управление зависимостями
 // end 24.3
+// work in 24.5
