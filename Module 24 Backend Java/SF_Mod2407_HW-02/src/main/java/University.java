@@ -7,13 +7,9 @@ public class University {
     int yearsOfFoundation;
     StudyProfile mainProfile;
 
-    public University(String id, String fullName) {
+    public University(String id, String fullName, String shortName) {
         this.id = id;
         this.fullName = fullName;
-    }
-
-    public University(String id, String fullName, String shortName) {
-        this(id, fullName);
         this.shortName = shortName;
     }
 
@@ -69,10 +65,22 @@ public class University {
 
     @Override
     public String toString() {
-        return this.getFullName()
-                + " (" + this.getShortName() + ")"
-                + " основан в " + this.getYearsOfFoundation()
-                + " году, направление " + this.getMainProfile()
-                ;
+        if (this.getYearsOfFoundation() == 0 && this.getMainProfile() == null) {
+            return this.getFullName()
+                    + " (" + this.getShortName() + ")"
+                    + ".";
+        } else if (this.getMainProfile() == null) {
+            return this.getFullName()
+                    + " (" + this.getShortName() + ")"
+                    + " основан в " + this.getYearsOfFoundation()
+                    + " году"
+                    + ".";
+        } else {
+            return this.getFullName()
+                    + " (" + this.getShortName() + ")"
+                    + " основан в " + this.getYearsOfFoundation()
+                    + " году, направление " + this.getMainProfile()
+                    + ".";
+        }
     }
 }

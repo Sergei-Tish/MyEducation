@@ -8,6 +8,11 @@ public enum StudyProfile {
 
     private String profileName;
 
+    @Override
+    public String toString() {
+        return profileName;
+    }
+
     StudyProfile(String profileName) {
         this.profileName = profileName;
     }
