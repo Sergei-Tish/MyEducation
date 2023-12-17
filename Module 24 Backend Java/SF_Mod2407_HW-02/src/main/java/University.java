@@ -65,22 +65,9 @@ public class University {
 
     @Override
     public String toString() {
-        if (this.getYearsOfFoundation() == 0 && this.getMainProfile() == null) {
-            return this.getFullName()
-                    + " (" + this.getShortName() + ")"
-                    + ".";
-        } else if (this.getMainProfile() == null) {
-            return this.getFullName()
-                    + " (" + this.getShortName() + ")"
-                    + " основан в " + this.getYearsOfFoundation()
-                    + " году"
-                    + ".";
-        } else {
-            return this.getFullName()
-                    + " (" + this.getShortName() + ")"
-                    + " основан в " + this.getYearsOfFoundation()
-                    + " году, направление " + this.getMainProfile()
-                    + ".";
-        }
+        String foundationInfo = (this.getYearsOfFoundation() == 0) ? "" : " основан в " + this.getYearsOfFoundation() + " году";
+        String profileInfo = (this.getMainProfile() == null) ? "" : ", направление " + this.getMainProfile();
+        return this.getFullName() + " (" + this.getShortName() + ")" + foundationInfo + profileInfo + ".";
     }
+
 }
