@@ -71,8 +71,6 @@ public class Student {
         return this;
     }
 
-
-
     @Override
 //    public String toString() {
 //        String courseInfo = (this.getCurrentCourseNumber() == 0) ? "" : " студент " + this.getCurrentCourseNumber() + " курса";
