@@ -7,29 +7,21 @@ public class Student {
     private int currentCourseNumber;
     private float avgExamScore;
 
-    private static Map<String, String> universityData = new HashMap<>();
-    public static Map<String, String> getUniversityData(String universityId) {
-        return universityData;
-    }
-    public static void setUniversityData(Map<String, String> universityData) {
-        Student.universityData = Student.getUniversityData() + universityData;
-    }
-
     public Student(String fullName) {
-        this.fullName = fullName;
+        this(fullName, null, 0, 0.0f);
     }
 
     public Student(String fullName, String universityId) {
-        this(fullName);
-        this.universityId = universityId;
+        this(fullName, universityId, 0, 0.0f);
     }
 
     public Student(String fullName, String universityId, int currentCourseNumber) {
-        this(fullName, universityId);
-        this.currentCourseNumber = currentCourseNumber;
+        this(fullName, universityId, currentCourseNumber, 0.0f);
     }
     public Student(String fullName, String universityId, int currentCourseNumber, float avgExamScore) {
-        this(fullName, universityId, currentCourseNumber);
+        this.fullName = fullName;
+        this.universityId = universityId;
+        this.currentCourseNumber = currentCourseNumber;
         this.avgExamScore = avgExamScore;
     }
 
@@ -38,7 +30,7 @@ public class Student {
     }
 
     public String getUniversityId() {
-        return universityId;
+        return universityId == null ? "" : universityId;
     }
 
     public int getCurrentCourseNumber() {
@@ -72,25 +64,19 @@ public class Student {
     }
 
     @Override
+    public String toString() {
+        String courseInfo = (this.getCurrentCourseNumber() == 0) ? " студент" : " студент " + this.getCurrentCourseNumber() + " курса";
+        String universityInfo = (this.getUniversityId() == null) ? "" : " " + University.universityHashMap.get(this.getUniversityId()).getShortName() + "";
+        String avgScoreInfo = (this.getAvgExamScore() == 0.0) ? "" : " Средний бал " + this.getAvgExamScore();
+        return this.getFullName() + courseInfo + universityInfo + "." + avgScoreInfo;
+    }
+
 //    public String toString() {
 //        String courseInfo = (this.getCurrentCourseNumber() == 0) ? "" : " студент " + this.getCurrentCourseNumber() + " курса";
 //        String universityInfo = (this.getUniversityId() == null) ? "" : " " + this.getUniversityId() + " университета";
 //        String avgScoreInfo = (this.getAvgExamScore() == 0.0) ? "" : " Средний бал " + this.getAvgExamScore();
 //        return this.getFullName() + courseInfo + universityInfo + "." + avgScoreInfo;
 //    }
-
-    public String toString() {
-        String courseInfo = (this.getCurrentCourseNumber() == 0) ? "" : " студент " + this.getCurrentCourseNumber() + " курса";
-        String universityInfo = (this.getUniversityId() == null) ? "" : " " + universityShortNameById(this.getUniversityId()) + " университета";
-        String avgScoreInfo = (this.getAvgExamScore() == 0.0) ? "" : " Средний бал " + this.getAvgExamScore();
-        return this.getFullName() + courseInfo + universityInfo + "." + avgScoreInfo;
-    }
-
-    private String universityShortNameById(String universityId) {
-        return
-        // Ваша логика получения shortName университета по его id
-    }
-
 
 //    public String toString() {
 //        return this.getFullName()
