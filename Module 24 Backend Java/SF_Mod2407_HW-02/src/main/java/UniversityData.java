@@ -5,18 +5,6 @@ public class UniversityData {
     private int yearsOfFoundation;
     private StudyProfile mainProfile;
 
-    public UniversityData(String id, String fullName, String shortName) {
-        this(id, fullName, shortName, 0, null);
-    }
-
-    public UniversityData(String id, String fullName, String shortName, int yearsOfFoundation) {
-        this(id, fullName, shortName, yearsOfFoundation, null);
-    }
-
-    public UniversityData(String id, String fullName, String shortName, StudyProfile mainProfile) {
-        this(id, fullName, shortName, 0, mainProfile);
-    }
-
     public UniversityData(String id, String fullName, String shortName, int yearsOfFoundation, StudyProfile mainProfile) {
         this.id = id;
         this.fullName = fullName;
@@ -70,14 +58,4 @@ public class UniversityData {
         this.mainProfile = mainProfile;
         return this;
     }
-
-// Другие методы класса...
-
-    @Override
-    public String toString() {
-        String foundationInfo = (this.getYearsOfFoundation() == 0) ? "" : " основан в " + this.getYearsOfFoundation() + " году";
-        String profileInfo = (this.getMainProfile() == null) ? "" : ", направление " + this.getMainProfile();
-        return this.getFullName() + " (" + this.getShortName() + ")" + foundationInfo + profileInfo + ".";
-    }
-
 }
