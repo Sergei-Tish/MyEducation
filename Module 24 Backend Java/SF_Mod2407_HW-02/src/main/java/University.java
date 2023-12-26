@@ -5,6 +5,7 @@ public class University {
 
     public static HashMap<String, UniversityData> universityHashMap = new HashMap<>();
 
+
     public University(String id, String fullName, String shortName) {
         this(id, fullName, shortName, 0, null);
     }
@@ -40,16 +41,15 @@ public class University {
         if (universityHashMap.get(this.id).getFullName() != null) {
             return universityHashMap.get(this.id).getFullName();
         } else {
-            return "ОШИБКА при исполнении: public String getFullName()";
+            return "!!!ОШИБКА!!! при исполнении: в University  String getFullName()";
         }
-
     }
 
     public University setFullName(String fullName) {
         if (universityHashMap.get(this.id) != null) {
             universityHashMap.get(this.id).setFullName(fullName);
         } else {
-            System.out.println("ОШИБКА при исполнении: public University setFullName(String fullName)");
+            System.out.println("!!!ОШИБКА!!! при исполнении: в University setFullName(String fullName)");
         }
         return this;
     }
@@ -59,16 +59,17 @@ public class University {
         if (universityData != null) {
             return universityData.getShortName();
         } else {
-            return "ОШИБКА при исполнении: public String getShortName()";
+            return "!!!ОШИБКА!!! при исполнении: в University - String getShortName()";
         }
     }
+
 
     public University setShortName(String newShortName) {
         UniversityData universityData = universityHashMap.get(this.id);
         if (universityData != null) {
             universityData.setShortName(newShortName);
         } else {
-            System.out.println("ОШИБКА при исполнении: public University setShortName(String newShortName)");
+            System.out.println("!!!ОШИБКА!!! при исполнении: в University setShortName(String newShortName)");
         }
         return this;
     }
@@ -78,7 +79,7 @@ public class University {
         if (universityData != null) {
             return universityData.getYearsOfFoundation();
         } else {
-            return -1; // Или другое значение по умолчанию
+            return 0; // Или другое значение по умолчанию
         }
     }
 
@@ -87,7 +88,7 @@ public class University {
         if (universityData != null) {
             universityData.setYearsOfFoundation(newYearsOfFoundation);
         } else {
-            System.out.println("ОШИБКА при исполнении: public University setYearsOfFoundation(int newYearsOfFoundation)");
+            System.out.println("ОШИБКА при исполнении: в University setYearsOfFoundation(int newYearsOfFoundation)");
         }
         return this;
     }
@@ -106,41 +107,15 @@ public class University {
         if (universityData != null) {
             universityData.setMainProfile(newMainProfile);
         } else {
-            System.out.println("ОШИБКА при исполнении: public University setMainProfile(StudyProfile newMainProfile)");
+            System.out.println("ОШИБКА при исполнении: в University setMainProfile(StudyProfile newMainProfile)");
         }
         return this;
     }
 
-
-//    public String getShortName() {
-//        return universityHashMap.get(this.id).getShortName();
-//    }
-//
-//    public University setShortName(String newShortName) {
-//        universityHashMap.get(this.id).setShortName(newShortName);
-//        return this;
-//    }
-//
-//    public int getYearsOfFoundation() {
-//            return universityHashMap.get(this.id).getYearsOfFoundation();
-//    }
-//
-//    public University setYearsOfFoundation(int newYearsOfFoundation) {
-//        universityHashMap.get(this.id).setYearsOfFoundation(newYearsOfFoundation);
-//        return this;
-//    }
-//
-//    public StudyProfile getMainProfile() {
-//        return universityHashMap.get(this.id).getMainProfile();
-//    }
-//
-//    public University setMainProfile(StudyProfile newMainProfile) {
-//        universityHashMap.get(this.id).setMainProfile(newMainProfile);
-//        return this;
-//    }
-
     @Override
     public String toString() {
-        return universityHashMap.get(this.id).toString();
+        String foundationInfo = (this.getYearsOfFoundation() == 0) ? "" : " основан в " + this.getYearsOfFoundation() + " году";
+        String profileInfo = (this.getMainProfile() == null) ? "" : ", направление " + this.getMainProfile();
+        return this.getFullName() + " (" + this.getShortName() + ")" + foundationInfo + profileInfo + ".";
     }
 }

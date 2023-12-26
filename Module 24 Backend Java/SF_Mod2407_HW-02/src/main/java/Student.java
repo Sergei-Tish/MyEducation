@@ -18,6 +18,7 @@ public class Student {
     public Student(String fullName, String universityId, int currentCourseNumber) {
         this(fullName, universityId, currentCourseNumber, 0.0f);
     }
+
     public Student(String fullName, String universityId, int currentCourseNumber, float avgExamScore) {
         this.fullName = fullName;
         this.universityId = universityId;
@@ -40,7 +41,6 @@ public class Student {
     public float getAvgExamScore() {
         return avgExamScore;
     }
-
 
 
     public Student setFullName(String fullName) {
@@ -66,25 +66,20 @@ public class Student {
     @Override
     public String toString() {
         String courseInfo = (this.getCurrentCourseNumber() == 0) ? " студент" : " студент " + this.getCurrentCourseNumber() + " курса";
-        String universityInfo = (this.getUniversityId() == null) ? "" : " " + University.universityHashMap.get(this.getUniversityId()).getShortName() + "";
+//        String universityInfo;
+//        if (this.getUniversityId() == null || University.universityHashMap.get(this.getUniversityId()) == null) {
+//            universityInfo = "";
+//        } else {
+//            universityInfo = " " + University.universityHashMap.get(this.getUniversityId()).getShortName() + "";
+//        }
+
+        String universityInfo;
+        if (this.getUniversityId() == null || !University.universityHashMap.containsKey(this.getUniversityId())) {
+            universityInfo = "";
+        } else {
+            universityInfo = " " + University.universityHashMap.get(this.getUniversityId()).getShortName() + "";
+        }
         String avgScoreInfo = (this.getAvgExamScore() == 0.0) ? "" : " Средний бал " + this.getAvgExamScore();
         return this.getFullName() + courseInfo + universityInfo + "." + avgScoreInfo;
     }
-
-//    public String toString() {
-//        String courseInfo = (this.getCurrentCourseNumber() == 0) ? "" : " студент " + this.getCurrentCourseNumber() + " курса";
-//        String universityInfo = (this.getUniversityId() == null) ? "" : " " + this.getUniversityId() + " университета";
-//        String avgScoreInfo = (this.getAvgExamScore() == 0.0) ? "" : " Средний бал " + this.getAvgExamScore();
-//        return this.getFullName() + courseInfo + universityInfo + "." + avgScoreInfo;
-//    }
-
-//    public String toString() {
-//        return this.getFullName()
-//                + " "
-//                + " cтудент " + this.getCurrentCourseNumber()
-//                + " курса " + this.getUniversityId()
-//                + "университета."
-//                + " Средний бал " + this.getAvgExamScore()
-//                ;
-//    }
 }
