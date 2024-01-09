@@ -1,6 +1,3 @@
-import java.util.HashMap;
-import java.util.Map;
-
 public class Student {
     private String fullName;
     private String universityId;
@@ -65,13 +62,9 @@ public class Student {
 
     @Override
     public String toString() {
-        String courseInfo = (this.getCurrentCourseNumber() == 0) ? " студент" : " студент " + this.getCurrentCourseNumber() + " курса";
-//        String universityInfo;
-//        if (this.getUniversityId() == null || University.universityHashMap.get(this.getUniversityId()) == null) {
-//            universityInfo = "";
-//        } else {
-//            universityInfo = " " + University.universityHashMap.get(this.getUniversityId()).getShortName() + "";
-//        }
+        String courseInfo;
+        if (this.getCurrentCourseNumber() == 0) courseInfo = " студент";
+        else courseInfo = " студент " + this.getCurrentCourseNumber() + " курса";
 
         String universityInfo;
         if (this.getUniversityId() == null || !University.universityHashMap.containsKey(this.getUniversityId())) {
@@ -79,6 +72,7 @@ public class Student {
         } else {
             universityInfo = " " + University.universityHashMap.get(this.getUniversityId()).getShortName() + "";
         }
+
         String avgScoreInfo = (this.getAvgExamScore() == 0.0) ? "" : " Средний бал " + this.getAvgExamScore();
         return this.getFullName() + courseInfo + universityInfo + "." + avgScoreInfo;
     }
