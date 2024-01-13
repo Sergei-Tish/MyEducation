@@ -2,8 +2,8 @@
 
 public class Main {
     public static void main(String[] args) {
-        University university0 = new University("0", "АлтайГосУнивер", "АГУ");
-        University university1 = new University("1", "АлтайГосТехнУнивер", "АГТУ", 1702);
+        University university0 = new University("0", "АлтайГосТехнУнивер", "АлтГТУ");
+        University university1 = new University("1", "АлтайГосУнивер", "АГУ", 1702);
         University university2 = new University("2", "НовосГосТехнУнивер", "НГТУ", 1803, StudyProfile.COMPUTER_SCIENCE);
         University university3 = new University("3", "МосковГосМедУнивер", "МГМУ", StudyProfile.MEDICINE);
 
@@ -15,10 +15,10 @@ public class Main {
         System.out.println();
 
         Student student  = new Student("Tishchenko Sergey Ivanovich");
-        Student student1 = new Student("Tishchenko Valeria Olegovna", "0");
-        Student student2 = new Student("YAzvenko Lera doch'Olega", "3", 3);
-        Student student3 = new Student("Elderrus Drocheslav synSergeya", "2", 2, 3.3f);
-        Student student4 = new Student("Elderrus2 Drocheslav2 synSergeya2", "5", 2, 3.3f);
+        Student student1 = new Student("Тищенко Сергей Иванович", "0");
+        Student student2 = new Student("Язвенко Ядослав Влерьевич", "3", 3);
+        Student student3 = new Student("Древнерусов Дрочеслав сын'Сергея", "2", 2, 3.3f);
+        Student student4 = new Student("Грибнов Тимофей Хомякович", "5", 2, 3.3f);
 
         System.out.println(student);
         System.out.println(student1);

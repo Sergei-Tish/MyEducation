@@ -7,8 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SF_Mod2407_HW-02" />
+        <module name="SF_Mod250201_Stacktrace_2try" />
         <module name="Module 23 after" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Module 25 Logging work_with_logs" target="19" />
+      <module name="SF_Mod250201_Stacktrace" target="19" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -6,7 +6,13 @@
       <list>
         <option value="$PROJECT_DIR$/Module 23 after/pom.xml" />
         <option value="$PROJECT_DIR$/Module 24 Backend Java/SF_Mod2407_HW-02/pom.xml" />
+        <option value="$PROJECT_DIR$/Module 25 Logging work_with_logs/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/Module 25 Logging work_with_logs/SF_Mod250201_Stacktrace/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="19" project-jdk-type="JavaSDK">
