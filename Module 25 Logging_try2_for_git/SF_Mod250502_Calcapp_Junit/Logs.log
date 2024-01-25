@@ -1,0 +1,56 @@
+[INFO ] 2024-01-21 19:19:42.586 [main] Test_log - Это информационное сообщение!
+[ERROR] 2024-01-21 19:19:42.589 [main] Test_log - Это сообщение ошибки
+
+[INFO ] 2024-01-22 16:03:54.754 [main] Test_log - Entered first num 55
+[INFO ] 2024-01-22 16:03:54.757 [main] Test_log - Entered char +
+[INFO ] 2024-01-22 16:03:54.757 [main] Test_log - Entered second num 6
+[INFO ] 2024-01-22 16:03:54.757 [main] Test_log - result 61
+[INFO ] 2024-01-22 16:04:26.918 [main] Test_log - Entered first num 6
+[INFO ] 2024-01-22 16:04:26.918 [main] Test_log - Entered char /
+[INFO ] 2024-01-22 16:04:26.918 [main] Test_log - Entered second num 2
+[INFO ] 2024-01-22 16:04:26.918 [main] Test_log - result 3
+[INFO ] 2024-01-22 16:04:31.022 [main] Test_log - Entered first num 9
+[INFO ] 2024-01-22 16:04:31.022 [main] Test_log - Entered char *
+[INFO ] 2024-01-22 16:04:31.022 [main] Test_log - Entered second num 9
+[INFO ] 2024-01-22 16:04:31.022 [main] Test_log - result 81
+[INFO ] 2024-01-22 16:04:34.157 [main] Test_log - Entered first num 9
+[INFO ] 2024-01-22 16:04:34.157 [main] Test_log - Entered char -
+[INFO ] 2024-01-22 16:04:34.157 [main] Test_log - Entered second num 5
+[INFO ] 2024-01-22 16:04:34.157 [main] Test_log - result 4
+[INFO ] 2024-01-22 16:17:22.433 [main] Test_log - Entered first num 1
+[INFO ] 2024-01-22 16:17:22.436 [main] Test_log - Entered char +
+[INFO ] 2024-01-22 16:17:22.436 [main] Test_log - Entered second num 15
+[INFO ] 2024-01-22 16:17:22.436 [main] Test_log - result 16
+[FATAL] 2024-01-22 16:36:09.257 [main] Test_log - Input: "77+4d". Введён недопустимый символ! Прекращение работы калькулятора.
+[INFO ] 2024-01-22 16:39:27.343 [main] Test_log - Entered first num 77
+[INFO ] 2024-01-22 16:39:27.346 [main] Test_log - Entered char /
+[INFO ] 2024-01-22 16:39:27.346 [main] Test_log - Entered second num 0
+[FATAL] 2024-01-22 16:39:27.346 [main] Test_log - can't divide by zero
+[INFO ] 2024-01-22 16:39:27.347 [main] Test_log - result 0
+[INFO ] 2024-01-22 16:40:21.571 [main] Test_log - Entered first num 44
+[INFO ] 2024-01-22 16:40:21.571 [main] Test_log - Entered char *
+[INFO ] 2024-01-22 16:40:21.572 [main] Test_log - Entered second num 2
+[INFO ] 2024-01-22 16:40:21.572 [main] Test_log - result 88
+[FATAL] 2024-01-22 16:40:21.572 [main] Test_log - Input: "T". Введён недопустимый символ! Прекращение работы калькулятора.
+[INFO ] 2024-01-22 16:41:11.008 [main] Test_log - Entered first num 5
+[INFO ] 2024-01-22 16:41:11.011 [main] Test_log - Entered char +
+[INFO ] 2024-01-22 16:41:11.011 [main] Test_log - Entered second num 2
+[INFO ] 2024-01-22 16:41:11.011 [main] Test_log - result 7
+[INFO ] 2024-01-22 16:41:11.011 [main] Test_log - Entered first num 5
+[INFO ] 2024-01-22 16:41:11.011 [main] Test_log - Entered char +
+[INFO ] 2024-01-22 16:41:11.012 [main] Test_log - Entered second num 7
+[INFO ] 2024-01-22 16:41:11.012 [main] Test_log - result 12
+[INFO ] 2024-01-22 16:41:11.012 [main] Test_log - Entered first num 6
+[INFO ] 2024-01-22 16:41:11.012 [main] Test_log - Entered char /
+[INFO ] 2024-01-22 16:41:11.012 [main] Test_log - Entered second num 3
+[INFO ] 2024-01-22 16:41:11.012 [main] Test_log - result 2
+[INFO ] 2024-01-22 16:41:11.012 [main] Test_log - Entered first num 8
+[INFO ] 2024-01-22 16:41:11.012 [main] Test_log - Entered char *
+[INFO ] 2024-01-22 16:41:11.012 [main] Test_log - Entered second num 4
+[INFO ] 2024-01-22 16:41:11.013 [main] Test_log - result 32
+[ERROR] 2024-01-22 16:42:06.982 [main] Test_log - Input: "Слова_и_буквы". Введён недопустимый символ! Прекращение работы калькулятора.
+[ERROR] 2024-01-22 16:42:29.545 [main] Test_log - Input: "вфывфы". Введён недопустимый символ! Прекращение работы калькулятора.
+[INFO ] 2024-01-25 17:10:44.162 [main] Test_log - Entered first num 5
+[INFO ] 2024-01-25 17:10:44.165 [main] Test_log - Entered char +
+[INFO ] 2024-01-25 17:10:44.165 [main] Test_log - Entered second num 4
+[INFO ] 2024-01-25 17:10:44.165 [main] Test_log - result 9
