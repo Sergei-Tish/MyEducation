@@ -9,48 +9,88 @@
 [INFO ] 2024-01-22 16:04:26.918 [main] Test_log - Entered char /
 [INFO ] 2024-01-22 16:04:26.918 [main] Test_log - Entered second num 2
 [INFO ] 2024-01-22 16:04:26.918 [main] Test_log - result 3
-[INFO ] 2024-01-22 16:04:31.022 [main] Test_log - Entered first num 9
-[INFO ] 2024-01-22 16:04:31.022 [main] Test_log - Entered char *
-[INFO ] 2024-01-22 16:04:31.022 [main] Test_log - Entered second num 9
-[INFO ] 2024-01-22 16:04:31.022 [main] Test_log - result 81
-[INFO ] 2024-01-22 16:04:34.157 [main] Test_log - Entered first num 9
-[INFO ] 2024-01-22 16:04:34.157 [main] Test_log - Entered char -
-[INFO ] 2024-01-22 16:04:34.157 [main] Test_log - Entered second num 5
-[INFO ] 2024-01-22 16:04:34.157 [main] Test_log - result 4
-[INFO ] 2024-01-22 16:17:22.433 [main] Test_log - Entered first num 1
-[INFO ] 2024-01-22 16:17:22.436 [main] Test_log - Entered char +
-[INFO ] 2024-01-22 16:17:22.436 [main] Test_log - Entered second num 15
-[INFO ] 2024-01-22 16:17:22.436 [main] Test_log - result 16
-[FATAL] 2024-01-22 16:36:09.257 [main] Test_log - Input: "77+4d". Введён недопустимый символ! Прекращение работы калькулятора.
-[INFO ] 2024-01-22 16:39:27.343 [main] Test_log - Entered first num 77
-[INFO ] 2024-01-22 16:39:27.346 [main] Test_log - Entered char /
-[INFO ] 2024-01-22 16:39:27.346 [main] Test_log - Entered second num 0
-[FATAL] 2024-01-22 16:39:27.346 [main] Test_log - can't divide by zero
-[INFO ] 2024-01-22 16:39:27.347 [main] Test_log - result 0
-[INFO ] 2024-01-22 16:40:21.571 [main] Test_log - Entered first num 44
-[INFO ] 2024-01-22 16:40:21.571 [main] Test_log - Entered char *
-[INFO ] 2024-01-22 16:40:21.572 [main] Test_log - Entered second num 2
-[INFO ] 2024-01-22 16:40:21.572 [main] Test_log - result 88
-[FATAL] 2024-01-22 16:40:21.572 [main] Test_log - Input: "T". Введён недопустимый символ! Прекращение работы калькулятора.
-[INFO ] 2024-01-22 16:41:11.008 [main] Test_log - Entered first num 5
-[INFO ] 2024-01-22 16:41:11.011 [main] Test_log - Entered char +
-[INFO ] 2024-01-22 16:41:11.011 [main] Test_log - Entered second num 2
-[INFO ] 2024-01-22 16:41:11.011 [main] Test_log - result 7
-[INFO ] 2024-01-22 16:41:11.011 [main] Test_log - Entered first num 5
-[INFO ] 2024-01-22 16:41:11.011 [main] Test_log - Entered char +
-[INFO ] 2024-01-22 16:41:11.012 [main] Test_log - Entered second num 7
-[INFO ] 2024-01-22 16:41:11.012 [main] Test_log - result 12
-[INFO ] 2024-01-22 16:41:11.012 [main] Test_log - Entered first num 6
-[INFO ] 2024-01-22 16:41:11.012 [main] Test_log - Entered char /
-[INFO ] 2024-01-22 16:41:11.012 [main] Test_log - Entered second num 3
-[INFO ] 2024-01-22 16:41:11.012 [main] Test_log - result 2
-[INFO ] 2024-01-22 16:41:11.012 [main] Test_log - Entered first num 8
-[INFO ] 2024-01-22 16:41:11.012 [main] Test_log - Entered char *
-[INFO ] 2024-01-22 16:41:11.012 [main] Test_log - Entered second num 4
-[INFO ] 2024-01-22 16:41:11.013 [main] Test_log - result 32
-[ERROR] 2024-01-22 16:42:06.982 [main] Test_log - Input: "Слова_и_буквы". Введён недопустимый символ! Прекращение работы калькулятора.
-[ERROR] 2024-01-22 16:42:29.545 [main] Test_log - Input: "вфывфы". Введён недопустимый символ! Прекращение работы калькулятора.
-[INFO ] 2024-01-25 17:10:44.162 [main] Test_log - Entered first num 5
-[INFO ] 2024-01-25 17:10:44.165 [main] Test_log - Entered char +
-[INFO ] 2024-01-25 17:10:44.165 [main] Test_log - Entered second num 4
-[INFO ] 2024-01-25 17:10:44.165 [main] Test_log - result 9
+
+[INFO ] 2024-01-25 17:30:59.380 [main] Test_log -  Entered first num 5 + 5 
+[INFO ] 2024-01-25 17:30:59.382 [main] Test_log - result 10
+[INFO ] 2024-01-25 17:31:41.524 [main] Test_log - Entered "5" + "63" 
+[INFO ] 2024-01-25 17:31:41.527 [main] Test_log - result 68
+[INFO ] 2024-01-25 17:33:24.605 [main] Test_log - Entered "77" * "0" 
+[INFO ] 2024-01-25 17:33:24.605 [main] Test_log - result 0
+[INFO ] 2024-01-25 17:33:28.845 [main] Test_log - Entered "80" / "0" 
+[FATAL] 2024-01-25 17:33:28.845 [main] Test_log - can't divide by zero
+[INFO ] 2024-01-25 17:33:28.845 [main] Test_log - result 0
+[INFO ] 2024-01-25 17:33:41.717 [main] Test_log - Entered "55" - "15" 
+[INFO ] 2024-01-25 17:33:41.717 [main] Test_log - result 40
+[INFO ] 2024-01-25 17:33:47.485 [main] Test_log - Entered "43" * "2" 
+[INFO ] 2024-01-25 17:33:47.485 [main] Test_log - result 86
+[INFO ] 2024-01-25 17:33:53.813 [main] Test_log - Entered "44" / "4" 
+[INFO ] 2024-01-25 17:33:53.813 [main] Test_log - result 11
+[ERROR] 2024-01-25 17:34:57.661 [main] Test_log - Input: "A_44+5". Введён недопустимый символ! Прекращение работы калькулятора.
+[ERROR] 2024-01-25 17:35:26.928 [main] Test_log - Input: "++-*". При вводе отсутствует число! Прекращение работы калькулятора.
+[ERROR] 2024-01-25 17:40:28.680 [main] Test_log - Input: "+5". При вводе отсутствует первое число! Прекращение работы калькулятора.
+[ERROR] 2024-01-25 17:41:16.239 [main] Test_log - Input: "44+". При вводе отсутствует второе число! Прекращение работы калькулятора.
+[INFO ] 2024-01-25 17:41:40.332 [main] Test_log - Entered "45" + "44" 
+[INFO ] 2024-01-25 17:41:40.334 [main] Test_log - result 89
+[ERROR] 2024-01-25 17:41:51.325 [main] Test_log - Input: "+50+5". При вводе отсутствует первое число! Прекращение работы калькулятора.
+[INFO ] 2024-01-25 17:42:53.483 [main] Test_log - Entered first num "5" + second num "4" 
+[INFO ] 2024-01-25 17:42:53.486 [main] Test_log - result 9
+[INFO ] 2024-01-25 17:43:40.756 [main] Test_log - Entered first num "4" and "+" and second num "5" 
+[INFO ] 2024-01-25 17:43:40.758 [main] Test_log - result 9
+[INFO ] 2024-01-26 15:00:22.502 [main] Test_log - Entered first num "5" and "+" and second num "8" 
+[INFO ] 2024-01-26 15:00:22.535 [main] Test_log - result 13
+[ERROR] 2024-01-26 15:00:26.726 [main] Test_log - Input: "4п+4". Введён недопустимый символ! Прекращение работы калькулятора.
+[ERROR] 2024-01-26 15:00:52.399 [main] Test_log - Input: "4+5end". Команда выключения! Прекращение работы калькулятора.
+[FATAL] 2024-01-26 15:04:34.096 [main] Test_log - Input: "проверка-end". Команда выключения! Прекращение работы калькулятора.
+[INFO ] 2024-01-26 15:12:45.020 [main] Test_log - Entered first num "70" and "*" and second num "2" 
+[INFO ] 2024-01-26 15:12:45.022 [main] Test_log - result 140
+[FATAL] 2024-01-26 15:12:53.909 [main] Test_log - Input: "40*end*4". Команда выключения! Прекращение работы калькулятора.
+[FATAL] 2024-01-26 15:45:58.588 [main] Test_log - Input: "5+4end". Команда выключения! Прекращение работы калькулятора.
+[FATAL] 2024-01-26 15:52:48.867 [main] Test_log - Input: "5+4 end Test". Команда выключения! Прекращение работы калькулятора.
+[ERROR] 2024-01-26 16:15:13.905 [main] Test_log - Input: "5". При вводе отсутствует число! Прекращение работы калькулятора.
+[INFO ] 2024-01-26 16:15:13.909 [main] Test_log - Entered first num "5" and "+" and second num "5" 
+[INFO ] 2024-01-26 16:15:13.909 [main] Test_log - result 10
+[INFO ] 2024-01-26 16:16:16.754 [main] Test_log - Entered first num "4" and "+" and second num "6" 
+[INFO ] 2024-01-26 16:16:16.756 [main] Test_log - result 10
+[INFO ] 2024-01-26 16:17:01.539 [main] Test_log - Entered first num "5" and "+" and second num "5" 
+[INFO ] 2024-01-26 16:17:01.542 [main] Test_log - result 10
+[ERROR] 2024-01-26 16:17:06.388 [main] Test_log - Input: "g+4". Введён недопустимый символ! Прекращение работы калькулятора.
+[ERROR] 2024-01-26 16:17:56.458 [main] Test_log - Input: "+". При вводе отсутствует число! Прекращение работы калькулятора.
+[ERROR] 2024-01-26 16:17:56.461 [main] Test_log - Input: "+3". При вводе отсутствует первое число! Прекращение работы калькулятора.
+[ERROR] 2024-01-26 16:19:01.847 [main] Test_log - Input: "+5". При вводе отсутствует первое число!
+[INFO ] 2024-01-26 16:19:38.178 [main] Test_log - Entered first num "5" and "+" and second num "5" 
+[INFO ] 2024-01-26 16:19:38.181 [main] Test_log - result 10
+[ERROR] 2024-01-26 16:19:40.812 [main] Test_log - Input: "+4". При вводе отсутствует первое число!
+[ERROR] 2024-01-26 16:20:26.931 [main] Test_log - Input: "+". При вводе отсутствует число!
+[ERROR] 2024-01-26 16:20:26.935 [main] Test_log - Input: "+3". При вводе отсутствует первое число!
+[ERROR] 2024-01-26 16:20:37.882 [main] Test_log - Input: "+". При вводе отсутствует число!
+[ERROR] 2024-01-26 16:20:37.885 [main] Test_log - Input: "5+". При вводе отсутствует второе число! Прекращение работы калькулятора.
+[ERROR] 2024-01-26 16:20:54.442 [main] Test_log - Input: "++-*/". При вводе отсутствует число!
+[ERROR] 2024-01-26 16:20:54.446 [main] Test_log - Input: "4+4 TEST". Введён недопустимый символ!
+[ERROR] 2024-01-26 16:20:54.447 [main] Test_log - Input: "+". При вводе отсутствует число!
+[ERROR] 2024-01-26 16:20:54.448 [main] Test_log - Input: "5+". При вводе отсутствует второе число! Прекращение работы калькулятора.
+[FATAL] 2024-01-26 16:20:54.449 [main] Test_log - Input: "5+4 end Test". Команда выключения! Прекращение работы калькулятора.
+[ERROR] 2024-01-26 16:20:54.450 [main] Test_log - Input: "+". При вводе отсутствует число!
+[ERROR] 2024-01-26 16:20:54.450 [main] Test_log - Input: "+3". При вводе отсутствует первое число!
+[ERROR] 2024-01-26 16:22:07.069 [main] Test_log - Input: "++-*/". При вводе отсутствует число!
+[ERROR] 2024-01-26 16:22:07.074 [main] Test_log - Input: "4+4 TEST". Введён недопустимый символ!
+[ERROR] 2024-01-26 16:22:07.076 [main] Test_log - Input: "+". При вводе отсутствует число!
+[ERROR] 2024-01-26 16:22:07.076 [main] Test_log - Input: "5+TEST". При вводе отсутствует второе число!
+[FATAL] 2024-01-26 16:22:07.077 [main] Test_log - Input: "5+4 end TEST". Команда выключения! Прекращение работы калькулятора.
+[ERROR] 2024-01-26 16:22:07.079 [main] Test_log - Input: "+". При вводе отсутствует число!
+[ERROR] 2024-01-26 16:22:07.079 [main] Test_log - Input: "+3+TEST". При вводе отсутствует первое число!
+[ERROR] 2024-01-26 16:26:41.601 [main] Test_log - Input: "++-*/". При вводе отсутствует число!
+[ERROR] 2024-01-26 16:26:41.606 [main] Test_log - Input: "4+4 TEST". Введён недопустимый символ!
+[ERROR] 2024-01-26 16:26:41.607 [main] Test_log - Input: "+". При вводе отсутствует число!
+[ERROR] 2024-01-26 16:26:41.607 [main] Test_log - Input: "5+TEST". При вводе отсутствует второе число!
+[FATAL] 2024-01-26 16:26:41.608 [main] Test_log - Input: "5+4 end TEST". Команда выключения! Прекращение работы калькулятора.
+[ERROR] 2024-01-26 16:26:41.610 [main] Test_log - Input: "+". При вводе отсутствует число!
+[ERROR] 2024-01-26 16:26:41.610 [main] Test_log - Input: "+3+TEST". При вводе отсутствует первое число!
+[INFO ] 2024-01-26 16:27:23.946 [main] Test_log - Entered first num "5" and "+" and second num "5" 
+[INFO ] 2024-01-26 16:27:23.949 [main] Test_log - result 10
+[INFO ] 2024-01-26 16:27:26.268 [main] Test_log - Entered first num "5" and "/" and second num "5" 
+[INFO ] 2024-01-26 16:27:26.268 [main] Test_log - result 1
+[ERROR] 2024-01-26 16:27:29.667 [main] Test_log - Input: "4+". При вводе отсутствует второе число!
+[ERROR] 2024-01-26 16:27:34.155 [main] Test_log - Input: "-9". При вводе отсутствует первое число!
+[ERROR] 2024-01-26 16:27:40.980 [main] Test_log - Input: "+84+5". При вводе отсутствует первое число!
+[INFO ] 2024-01-26 16:27:47.492 [main] Test_log - Entered first num "55" and "+" and second num "55" 
+[INFO ] 2024-01-26 16:27:47.492 [main] Test_log - result 110
