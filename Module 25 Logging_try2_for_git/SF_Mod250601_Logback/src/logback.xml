@@ -1,0 +1,14 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+<!--            <pattern>%d{HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n</pattern>-->
+<!--            Задание 25.6.1
+Как будет выглядеть тег <pattern> в конфигурации, если нам нужно будет выводить время в часах и минутах и
+уровень ошибки, а текст уведомления имеет длину не более 12 символов?-->
+            <pattern>%d{HH:mm} %-5level [%thread] %logger{12} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <root level="debug">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

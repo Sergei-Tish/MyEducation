@@ -94,3 +94,5 @@
 [ERROR] 2024-01-26 16:27:40.980 [main] Test_log - Input: "+84+5". При вводе отсутствует первое число!
 [INFO ] 2024-01-26 16:27:47.492 [main] Test_log - Entered first num "55" and "+" and second num "55" 
 [INFO ] 2024-01-26 16:27:47.492 [main] Test_log - result 110
+[INFO ] 2024-01-29 18:30:26.038 [main] Test_log - Entered first num "5" and "+" and second num "5" 
+[INFO ] 2024-01-29 18:30:26.041 [main] Test_log - result 10

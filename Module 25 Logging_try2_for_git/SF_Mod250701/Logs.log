@@ -1,0 +1,8 @@
+[DEBUG] 2024-01-29 18:33:22.904 [main] Calcapp - Entered first num 5
+[DEBUG] 2024-01-29 18:33:25.655 [main] Calcapp - Entered second num 6
+[DEBUG] 2024-01-29 18:33:27.310 [main] Calcapp - Entered char +
+[DEBUG] 2024-01-29 18:33:27.310 [main] Calcapp - result  11
+[DEBUG] 2024-01-29 18:37:08.617 [main] Calcapp - Entered first num 104
+[DEBUG] 2024-01-29 18:37:10.501 [main] Calcapp - Entered second num 152
+[DEBUG] 2024-01-29 18:37:12.886 [main] Calcapp - Entered char +
+[DEBUG] 2024-01-29 18:37:12.886 [main] Calcapp - result  256

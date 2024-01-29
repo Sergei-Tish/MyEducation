@@ -7,6 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SF_Mod250502_Calcapp_Junit" />
+        <module name="SF_Mod250601_Logback" />
+        <module name="SF_Mod250701" />
         <module name="SF_Mod2407_HW-02" />
         <module name="Module 23 after" />
       </profile>
@@ -15,6 +17,7 @@
       <module name="Module 25 Logging work_with_logs" target="19" />
       <module name="SF_Mod250201_Stacktrace" target="19" />
       <module name="SF_Mod250201_Stacktrace_2try" target="19" />
+      <module name="SF_Mod250701_Slf4j" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
