@@ -17,7 +17,7 @@ public class Calcapp {
         logger.debug("Entered char " + k);
         switch (k){
             case "+":
-                i=i+j;
+                i=i+j; //цццц
                 break;
             case "-":
                 i=i-j;
