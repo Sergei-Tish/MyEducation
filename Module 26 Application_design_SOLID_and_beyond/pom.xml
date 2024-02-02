@@ -5,15 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>Module_25_Logging_try2_for_git</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>Module_26_Application_design_SOLID_and_beyond</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>SF_Mod250502_Calcapp_Junit</module>
-        <module>SF_Mod250601_Logback</module>
-        <module>SF_Mod250701</module>
-        <module>SF_Mod250901_Logging_Project</module>
-    </modules>
 
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
