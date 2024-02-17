@@ -43,6 +43,5 @@ public class Boot {
                 System.out.println(u);
             }
         }
-
     }
 }
