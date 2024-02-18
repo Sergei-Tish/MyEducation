@@ -11,7 +11,6 @@ import java.util.List;
 
 public class Boot {
 
-
     public static void main(String[] args) throws IOException {
 
         String filePath = "K:\\IdeaProjects\\MyEducation\\Module 26 Application_design_SOLID_and_beyond\\SF_Mod260901_Project\\src\\main\\resources\\universityInfo.xlsx";
