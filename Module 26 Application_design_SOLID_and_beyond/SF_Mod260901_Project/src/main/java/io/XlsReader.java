@@ -33,14 +33,13 @@ public class XlsReader {
             Row currentRow = rows.next();
             University university = new University();
             universities.add(university);
-            university.setId(currentRow.getCell(0).getStringCellValue());
-            university.setFullName(currentRow.getCell(1).getStringCellValue());
-            university.setShortName(currentRow.getCell(2).getStringCellValue());
-            university.setYearOfFoundation((int)currentRow.getCell(3).getNumericCellValue());
-            university.setMainProfile(StudyProfile.valueOf(
-                    StudyProfile.class, currentRow.getCell(4).getStringCellValue()));
+            university.setId(currentRow.getCell(0).getStringCellValue())
+                    .setFullName(currentRow.getCell(1).getStringCellValue())
+                    .setShortName(currentRow.getCell(2).getStringCellValue())
+                    .setYearOfFoundation((int) currentRow.getCell(3).getNumericCellValue())
+                    .setMainProfile(StudyProfile.valueOf(
+                            StudyProfile.class, currentRow.getCell(4).getStringCellValue()));
         }
-
         return universities;
     }
 
@@ -59,12 +58,11 @@ public class XlsReader {
             Row currentRow = rows.next();
             Student student = new Student();
             students.add(student);
-            student.setUniversityId(currentRow.getCell(0).getStringCellValue());
-            student.setFullName(currentRow.getCell(1).getStringCellValue());
-            student.setCurrentCourseNumber((int)currentRow.getCell(2).getNumericCellValue());
-            student.setAvgExamScore((float)currentRow.getCell(3).getNumericCellValue());
+            student.setUniversityId(currentRow.getCell(0).getStringCellValue())
+                    .setFullName(currentRow.getCell(1).getStringCellValue())
+                    .setCurrentCourseNumber((int) currentRow.getCell(2).getNumericCellValue())
+                    .setAvgExamScore((float) currentRow.getCell(3).getNumericCellValue());
         }
-
         return students;
     }
 }

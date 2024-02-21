@@ -8,6 +8,26 @@ public class Student {
     private float avgExamScore;
 
     public Student() {
+        this("неуказано", "неуказано", 0, 0.0f);
+    }
+
+    public Student(String fullName) {
+        this(fullName, "неуказано", 0, 0.0f);
+    }
+
+    public Student(String fullName, String universityId) {
+        this(fullName, universityId, 0, 0.0f);
+    }
+
+    public Student(String fullName, String universityId, int currentCourseNumber) {
+        this(fullName, universityId, currentCourseNumber, 0.0f);
+    }
+
+    public Student(String fullName, String universityId, int currentCourseNumber, float avgExamScore) {
+        this.fullName = fullName;
+        this.universityId = universityId;
+        this.currentCourseNumber = currentCourseNumber;
+        this.avgExamScore = avgExamScore;
     }
 
     public String getFullName() {

@@ -66,13 +66,6 @@ public class Student {
     @Override
     public String toString() {
         String courseInfo = (this.getCurrentCourseNumber() == 0) ? " студент" : " студент " + this.getCurrentCourseNumber() + " курса";
-//        String universityInfo;
-//        if (this.getUniversityId() == null || University.universityHashMap.get(this.getUniversityId()) == null) {
-//            universityInfo = "";
-//        } else {
-//            universityInfo = " " + University.universityHashMap.get(this.getUniversityId()).getShortName() + "";
-//        }
-
         String universityInfo;
         if (this.getUniversityId() == null || !University.universityHashMap.containsKey(this.getUniversityId())) {
             universityInfo = "";
