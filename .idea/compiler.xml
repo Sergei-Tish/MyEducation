@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SF_Mod250502_Calcapp_Junit" />
+        <module name="MyEducation" />
         <module name="SF_Mod250601_Logback" />
         <module name="SF_Mod2407_HW-02" />
         <module name="Module 23 after" />
