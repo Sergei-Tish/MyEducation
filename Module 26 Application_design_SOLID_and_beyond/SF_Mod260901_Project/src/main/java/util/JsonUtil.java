@@ -58,10 +58,7 @@ public class JsonUtil {
         return new Gson().fromJson(json, new TypeToken<List<model.University>>(){}.getType());
     }
 
-
     public static List<model.Student> jsonToStudentList(String json) {
         return new Gson().fromJson(json, new TypeToken<List<model.Student>>(){}.getType());
     }
-
-
 }

@@ -1,3 +1,4 @@
+import com.google.gson.Gson;
 import enums.StudentComparatorType;
 import enums.UniversityComparatorType;
 import io.XlsReader;
@@ -54,17 +55,37 @@ public class Boot {
 
         /* Практическая неделя 3 */
         System.out.println("\nПрактическая неделя 3 - работа с JSON:");
-        University universityForJson = universities.get(2);
-        String jsonUniversity = JsonUtil.universityToJson(universityForJson);
-        System.out.println("Инфа об универе " + universityForJson.getShortName() + " " + jsonUniversity);
-        Student studentForJson = students.get(3);
-        String jsonStudent = JsonUtil.studentToJson(studentForJson);
-        System.out.println("Инфа о студенте " + studentForJson.getFullName() + " " + jsonStudent);
 
-        String jsonUniversityList = JsonUtil.universityListToJson(universities);
-        System.out.println("Инфа об универах " + jsonUniversityList);
-        String jsonStudentList = JsonUtil.studentListToJson(students);
-        System.out.println("Инфа о студентах " + jsonStudentList);
+        University university = universities.get(2);
+        String jsonUniversity = JsonUtil.universityToJson(university);       // University в JSON
+        System.out.println("Инфа об ОДНОМ универе в JSON - " + university.getShortName() + " " + jsonUniversity);
+        University universityAfterJson = JsonUtil.jsonToUniversity(jsonUniversity);  // JSON обратно в University
 
+        Student student = students.get(3);
+        String jsonStudent = JsonUtil.studentToJson(student);                // Student в JSON
+        System.out.println("Инфа об ОДНОМ студенте в JSON - " + student.getFullName() + " " + jsonStudent);
+        Student studentAfterJson = JsonUtil.jsonToStudent(jsonStudent);              // JSON обратно в Student
+
+        String jsonUniversityList = JsonUtil.universityListToJson(universities);    // List<University> в JSON
+        System.out.println("Инфа о ВСЕХ универах в JSON - " + jsonUniversityList);
+        List<model.University> universitiesAfterJson = JsonUtil.jsonToUniversityList(jsonUniversityList);    // JSON обратно в List<University>
+
+        String jsonStudentList = JsonUtil.studentListToJson(students);              // List<Student> в JSON
+        System.out.println("Инфа о ВСЕХ студентах в JSON - " + jsonStudentList);
+        List<model.Student> studentsAfterJson = JsonUtil.jsonToStudentList(jsonStudentList);                 // JSON обратно в List<Student>
+
+        System.out.println(
+                "Один универ до JSON и после равны? Ответ: " + university.equals(universityAfterJson) + universityAfterJson.equals(university) + ".\n" +
+                        "Один студент до JSON и после равны? Ответ: " + student.equals(studentAfterJson) + studentAfterJson.equals(student) + ".\n" +
+                        "Лист универов до JSON и после равны? Ответ: " + universities.equals(universitiesAfterJson) + universitiesAfterJson.equals(universities) + ".\n" +
+                        "Лист студенттов до JSON и после равны? Ответ: " + students.equals(studentsAfterJson) + studentsAfterJson.equals(students) + ".\n"
+        );
+
+        universities.stream().
+                forEach(System.out::println);
+        System.out.println("———————————————————————————————————————————————————————");
+        universitiesAfterJson.stream().
+                forEach(System.out::println); // мне выдало false поэтому сам сравнил Листы => нужно переопределить equals()
+        // ещё переопредеить equals для Student
     }
 }

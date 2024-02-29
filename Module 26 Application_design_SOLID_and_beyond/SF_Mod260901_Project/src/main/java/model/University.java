@@ -2,6 +2,8 @@ package model;
 
 import enums.StudyProfile;
 
+import java.util.Objects;
+
 public class University {
 
     private String id;
@@ -87,4 +89,23 @@ public class University {
                 this.yearOfFoundation,
                 this.mainProfile.getProfileName());
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        University university = (University) o;
+        return yearOfFoundation == university.yearOfFoundation &&
+                Objects.equals(id, university.id) &&
+                Objects.equals(fullName, university.fullName) &&
+                Objects.equals(shortName, university.shortName) &&
+                Objects.equals(mainProfile, university.mainProfile);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, fullName, shortName, yearOfFoundation, mainProfile);
+    }
+
+
 }
