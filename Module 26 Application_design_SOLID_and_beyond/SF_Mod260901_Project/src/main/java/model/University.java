@@ -1,15 +1,20 @@
 package model;
 
+import com.google.gson.annotations.SerializedName;
 import enums.StudyProfile;
 
 import java.util.Objects;
 
 public class University {
-
+    @SerializedName("ID-университета")
     private String id;
+    @SerializedName("Наименование")
     private String fullName;
+    @SerializedName("Абревиатура")
     private String shortName;
+    @SerializedName("Год основания")
     private int yearOfFoundation;
+    @SerializedName("Профиль вуза")
     private StudyProfile mainProfile;
 
     public University() {
@@ -90,6 +95,7 @@ public class University {
                 this.mainProfile.getProfileName());
     }
 
+    /* Практическая неделя 3 */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

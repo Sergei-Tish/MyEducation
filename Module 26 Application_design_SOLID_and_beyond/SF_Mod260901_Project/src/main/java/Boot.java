@@ -56,36 +56,37 @@ public class Boot {
         /* Практическая неделя 3 */
         System.out.println("\nПрактическая неделя 3 - работа с JSON:");
 
-        University university = universities.get(2);
-        String jsonUniversity = JsonUtil.universityToJson(university);       // University в JSON
-        System.out.println("Инфа об ОДНОМ универе в JSON - " + university.getShortName() + " " + jsonUniversity);
-        University universityAfterJson = JsonUtil.jsonToUniversity(jsonUniversity);  // JSON обратно в University
 
-        Student student = students.get(3);
-        String jsonStudent = JsonUtil.studentToJson(student);                // Student в JSON
-        System.out.println("Инфа об ОДНОМ студенте в JSON - " + student.getFullName() + " " + jsonStudent);
-        Student studentAfterJson = JsonUtil.jsonToStudent(jsonStudent);              // JSON обратно в Student
-
+//      4. В методе main выполнить сериализацию коллекций 5. и после десериализацию
         String jsonUniversityList = JsonUtil.universityListToJson(universities);    // List<University> в JSON
         System.out.println("Инфа о ВСЕХ универах в JSON - " + jsonUniversityList);
-        List<model.University> universitiesAfterJson = JsonUtil.jsonToUniversityList(jsonUniversityList);    // JSON обратно в List<University>
+        List<model.University> universitiesFromJson = JsonUtil.jsonToUniversityList(jsonUniversityList);    // JSON обратно в List<University>
 
         String jsonStudentList = JsonUtil.studentListToJson(students);              // List<Student> в JSON
         System.out.println("Инфа о ВСЕХ студентах в JSON - " + jsonStudentList);
-        List<model.Student> studentsAfterJson = JsonUtil.jsonToStudentList(jsonStudentList);                 // JSON обратно в List<Student>
+        List<model.Student> studentsFromJson = JsonUtil.jsonToStudentList(jsonStudentList);                 // JSON обратно в List<Student>
 
-        System.out.println(
-                "Один универ до JSON и после равны? Ответ: " + university.equals(universityAfterJson) + universityAfterJson.equals(university) + ".\n" +
-                        "Один студент до JSON и после равны? Ответ: " + student.equals(studentAfterJson) + studentAfterJson.equals(student) + ".\n" +
-                        "Лист универов до JSON и после равны? Ответ: " + universities.equals(universitiesAfterJson) + universitiesAfterJson.equals(universities) + ".\n" +
-                        "Лист студенттов до JSON и после равны? Ответ: " + students.equals(studentsAfterJson) + studentsAfterJson.equals(students) + ".\n"
+//      6. Сравнить количество элементов в исходной и в десериализованной коллекциях, чтобы убедиться, что десериализация выполняется корректно.
+//        сначала выдало false поэтому переопределил equals()
+        System.out.println("Лист универов до JSON и после равны? Ответ: " + universities.equals(universitiesFromJson) + universitiesFromJson.equals(universities) + ".\n" +
+                        "Лист студенттов до JSON и после равны? Ответ: " + students.equals(studentsFromJson) + studentsFromJson.equals(students) + ".\n"
         );
 
-        universities.stream().
-                forEach(System.out::println);
-        System.out.println("———————————————————————————————————————————————————————");
-        universitiesAfterJson.stream().
-                forEach(System.out::println); // мне выдало false поэтому сам сравнил Листы => нужно переопределить equals()
-        // ещё переопредеить equals для Student
+        System.out.println("JSON-строки университетов:");
+        universities.stream()
+                .forEach(university -> {
+                    String jsonUniversity = JsonUtil.universityToJson(university);
+                    System.out.println(jsonUniversity);
+                    University universityFromJson = JsonUtil.jsonToUniversity(jsonUniversity);
+                    System.out.println(universityFromJson);
+                });
+        System.out.println("JSON-строки студентов:");
+        students.stream()
+                .forEach(student -> {
+                    String jsonStudent = JsonUtil.studentToJson(student);
+                    System.out.println(jsonStudent);
+                    Student studentFromJson = JsonUtil.jsonToStudent(jsonStudent);
+                    System.out.println(studentFromJson);
+                });
     }
 }

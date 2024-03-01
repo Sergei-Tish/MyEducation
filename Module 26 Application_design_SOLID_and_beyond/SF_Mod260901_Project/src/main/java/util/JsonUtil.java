@@ -27,22 +27,22 @@ public class JsonUtil {
     }
 
     public static String universityToJson(University university) {
-        Gson gson = getGsonFromGsonBuilderPrettyPrinting();
+        Gson gson = JsonUtil.getGsonFromGsonBuilderPrettyPrinting();
         return gson.toJson(university);
     }
 
     public static String studentToJson(Student student) {
-        Gson gson = getGsonFromGsonBuilderPrettyPrinting();
+        Gson gson = JsonUtil.getGsonFromGsonBuilderPrettyPrinting();
         return gson.toJson(student);
     }
 
     public static String universityListToJson(List<model.University> universityList) {
-        Gson gson = getGsonFromGsonBuilderPrettyPrinting();
+        Gson gson = JsonUtil.getGsonFromGsonBuilderPrettyPrinting();
         return gson.toJson(universityList);
     }
 
     public static String studentListToJson(List<model.Student> studentList) {
-        Gson gson = getGsonFromGsonBuilderPrettyPrinting();
+        Gson gson = JsonUtil.getGsonFromGsonBuilderPrettyPrinting();
         return gson.toJson(studentList);
     }
 

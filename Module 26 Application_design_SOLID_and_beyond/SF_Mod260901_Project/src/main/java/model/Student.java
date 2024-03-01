@@ -1,10 +1,17 @@
 package model;
 
-public class Student {
+import com.google.gson.annotations.SerializedName;
 
+import java.util.Objects;
+
+public class Student {
+    @SerializedName("Имя студента")
     private String fullName;
+    @SerializedName("ID-университета")
     private String universityId;
+    @SerializedName("Курс обучения")
     private int currentCourseNumber;
+    @SerializedName("Средняя оценка")
     private float avgExamScore;
 
     public Student() {
@@ -74,4 +81,26 @@ public class Student {
                 this.currentCourseNumber,
                 this.avgExamScore);
     }
+
+    /* Практическая неделя 3 */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Student student = (Student) obj;
+        return currentCourseNumber == student.currentCourseNumber &&
+                Float.compare(student.avgExamScore, avgExamScore) == 0 &&
+                Objects.equals(fullName, student.fullName) &&
+                Objects.equals(universityId, student.universityId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fullName, universityId, currentCourseNumber, avgExamScore);
+    }
+
 }
