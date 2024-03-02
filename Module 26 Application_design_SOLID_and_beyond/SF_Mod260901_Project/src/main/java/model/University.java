@@ -10,7 +10,7 @@ public class University {
     private String id;
     @SerializedName("Наименование")
     private String fullName;
-    @SerializedName("Абревиатура")
+    @SerializedName("Аббревиатура")
     private String shortName;
     @SerializedName("Год основания")
     private int yearOfFoundation;

@@ -1,4 +1,5 @@
-import com.google.gson.Gson;
+import comparator.StudentComparator;
+import comparator.UniversityComparator;
 import enums.StudentComparatorType;
 import enums.UniversityComparatorType;
 import io.XlsReader;
@@ -8,7 +9,6 @@ import util.ComparatorUtil;
 import util.JsonUtil;
 
 import java.io.IOException;
-import java.util.Comparator;
 import java.util.List;
 
 public class Boot {
@@ -29,6 +29,12 @@ public class Boot {
             System.out.println(s);
         }
 
+        /* создание нужных компараторов для сортировки */ //
+        UniversityComparator universityComparator = ComparatorUtil.getComparator(UniversityComparatorType.YEAR);
+        StudentComparator studentComparator = ComparatorUtil.getComparator(StudentComparatorType.AVG_EXAM_SCORE);
+        universities.sort(universityComparator);
+        students.sort(studentComparator);
+
 //        /* Вывести университет опредедленного студента. */
 //
 //        Student studentForPrintUniversity = students.get(3);
@@ -39,24 +45,11 @@ public class Boot {
 //                System.out.println(u);
 //            }
 //        }
-
-//        /* создание нужных компараторов для сортировки */ //
-//        Comparator<University> universityComparator = ComparatorUtil.getComparator(UniversityComparatorType.YEAR);
-//        Comparator<Student> studentComparator = ComparatorUtil.getComparator(StudentComparatorType.AVG_EXAM_SCORE);
-//
 //        System.out.println();
-//        /* вывод использованием Stream API и после сортировки. */
-//        universities.stream().
-//                sorted(universityComparator).
-//                forEach(System.out::println);
-//        students.stream().
-//                sorted(studentComparator).
-//                forEach(System.out::println);
+
 
         /* Практическая неделя 3 */
         System.out.println("\nПрактическая неделя 3 - работа с JSON:");
-
-
 //      4. В методе main выполнить сериализацию коллекций 5. и после десериализацию
         String jsonUniversityList = JsonUtil.universityListToJson(universities);    // List<University> в JSON
         System.out.println("Инфа о ВСЕХ универах в JSON - " + jsonUniversityList);
@@ -67,7 +60,7 @@ public class Boot {
         List<model.Student> studentsFromJson = JsonUtil.jsonToStudentList(jsonStudentList);                 // JSON обратно в List<Student>
 
 //      6. Сравнить количество элементов в исходной и в десериализованной коллекциях, чтобы убедиться, что десериализация выполняется корректно.
-//        сначала выдало false поэтому переопределил equals()
+//        Сравнил полностью - сначала выдало false поэтому переопределил equals() в классах
         System.out.println("Лист универов до JSON и после равны? Ответ: " + universities.equals(universitiesFromJson) + universitiesFromJson.equals(universities) + ".\n" +
                         "Лист студенттов до JSON и после равны? Ответ: " + students.equals(studentsFromJson) + studentsFromJson.equals(students) + ".\n"
         );

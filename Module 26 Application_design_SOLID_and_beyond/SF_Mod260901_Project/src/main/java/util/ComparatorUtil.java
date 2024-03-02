@@ -40,35 +40,3 @@ public class ComparatorUtil {
         }
     }
 }
-
-/*
-public class ComparatorUtil2 {
-
-    private static final Map<StudentComparatorType, StudentComparator> studentComparatorMap = new EnumMap<>(StudentComparatorType.class);
-    private static final Map<UniversityComparatorType, UniversityComparator> universityComparatorMap = new EnumMap<>(UniversityComparatorType.class);
-
-    static {
-        studentComparatorMap.put(StudentComparatorType.UNIVERSITY_ID, new StudentUniversityIdComparator());
-        studentComparatorMap.put(StudentComparatorType.FULL_NAME, new StudentFullNameComparator());
-        studentComparatorMap.put(StudentComparatorType.COURSE, new StudentCurrentCourseNumberComparator());
-        studentComparatorMap.put(StudentComparatorType.AVG_EXAM_SCORE, new StudentAvgExamScoreComparator());
-
-        universityComparatorMap.put(UniversityComparatorType.ID, new UniversityIdComparator());
-        universityComparatorMap.put(UniversityComparatorType.FULL_NAME, new UniversityFullNameComparator());
-        universityComparatorMap.put(UniversityComparatorType.SHORT_NAME, new UniversityShortNameComparator());
-        universityComparatorMap.put(UniversityComparatorType.PROFILE, new UniversityMainProfileComparator());
-        universityComparatorMap.put(UniversityComparatorType.YEAR, new UniversityYearOfFoundationComparator());
-    }
-
-    private ComparatorUtil() {
-    }
-
-    public static StudentComparator getStudentComparator(StudentComparatorType studentComparatorType) {
-        return studentComparatorMap.get(studentComparatorType);
-    }
-
-    public static UniversityComparator getUniversityComparator(UniversityComparatorType universityComparatorType) {
-        return universityComparatorMap.get(universityComparatorType);
-    }
-}
- */
