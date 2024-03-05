@@ -4,6 +4,7 @@ public class Main {
     }
     public static void test1() {
         String i = "1";
+
         inc(i);
         System.out.println(i);
     }
