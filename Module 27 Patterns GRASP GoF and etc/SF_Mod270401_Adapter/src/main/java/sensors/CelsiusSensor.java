@@ -1,8 +1,13 @@
+package sensors;
+
+import io.InputTemp;
+import tempinterface.TempCelsiusInterface;
+
 public class CelsiusSensor implements TempCelsiusInterface {
     @Override
     public void showCelsius() {
         double bodyTempCelsius = convertFahrenheitToCelsius(InputTemp.bodyTempFahrenheit);
-        System.out.println("Yормальная температура тела = " + bodyTempCelsius + "°C");
+        System.out.println("Нормальная температура тела = " + bodyTempCelsius + "°C");
 
         double outdoorTempCelsius = convertFahrenheitToCelsius(InputTemp.outdoorTempFahrenheit);
         System.out.println("Сейчас за окном " + outdoorTempCelsius + "°C");
