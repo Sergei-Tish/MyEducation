@@ -8,11 +8,15 @@
         <outputRelativeToContentRoot value="true" />
         <module name="SF_Mod250502_Calcapp_Junit" />
         <module name="SF_Mod250601_Logback" />
+        <module name="SF_Mod270504_Mediator" />
         <module name="SF_Mod2407_HW-02" />
+        <module name="SF_Mod270601_Memento" />
         <module name="Tests_from_internet" />
+        <module name="SF_Mod270501_Command" />
         <module name="SF_Mod270403_Decorator" />
         <module name="SF_Mod250901_Logging_Project" />
         <module name="SF_Mod270406_Proxy" />
+        <module name="SF_Mod270602_Observer" />
         <module name="SF_Mod270501_Iterator" />
         <module name="Module 23 after" />
         <module name="SF_Mod260901_Project" />
