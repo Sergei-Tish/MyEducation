@@ -11,6 +11,7 @@
     <modules>
         <module>Module 27 Patterns GRASP GoF and etc</module>
         <module>Module 27 Patterns GRASP GoF and etc/SF_Mod270401_Adapter</module>
+        <module>Module 27 Patterns GRASP GoF and etc/SF_Mod270606_Visitor</module>
     </modules>
 
     <properties>
