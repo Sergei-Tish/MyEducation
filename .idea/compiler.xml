@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SF_Mod250502_Calcapp_Junit" />
+        <module name="Module 28 Reflection-API_Lombok_MapStruct" />
         <module name="SF_Mod250601_Logback" />
         <module name="SF_Mod270504_Mediator" />
         <module name="SF_Mod270606_Visitor" />

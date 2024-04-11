@@ -13,6 +13,7 @@
         <module>Module 27 Patterns GRASP GoF and etc/SF_Mod270401_Adapter</module>
         <module>Module 27 Patterns GRASP GoF and etc/SF_Mod270606_Visitor</module>
         <module>Module 27 Patterns GRASP GoF and etc/SF_Mod270801_Univ_Stud</module>
+        <module>Module 28 Reflection-API_Lombok_MapStruct</module>
     </modules>
 
     <properties>
