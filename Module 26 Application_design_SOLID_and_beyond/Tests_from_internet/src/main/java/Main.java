@@ -29,19 +29,19 @@ public class Main {
     }
 
     public static void test2() {
-        List<Main> universities = new ArrayList<>();
+        List<Main> itsList = new ArrayList<>();
         Main main = new Main("s");
         Main main1 = new Main("s1");
         Main main2 = new Main("s2");
         Main main3 = new Main("s3");
         Main main4 = new Main("s4");
-        universities.add(main);
-        universities.add(main1);
-        universities.add(main2);
-        universities.add(main3);
-        universities.add(main4);
+        itsList.add(main);
+        itsList.add(main1);
+        itsList.add(main2);
+        itsList.add(main3);
+        itsList.add(main4);
 
-        String names = universities.stream()
+        String names = itsList.stream()
                 .map(Main::getFullName)
                 .collect(Collectors.joining("; "));
         System.out.println("-=" + names + "=-");

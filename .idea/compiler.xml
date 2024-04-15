@@ -7,29 +7,29 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SF_Mod250502_Calcapp_Junit" />
-        <module name="Module 28 Reflection-API_Lombok_MapStruct" />
         <module name="SF_Mod250601_Logback" />
-        <module name="SF_Mod270504_Mediator" />
         <module name="SF_Mod270606_Visitor" />
         <module name="SF_Mod2407_HW-02" />
-        <module name="SF_Mod270601_Memento" />
-        <module name="Tests_from_internet" />
         <module name="SF_Mod270501_Command" />
-        <module name="SF_Mod270403_Decorator" />
         <module name="SF_Mod270603_State" />
         <module name="SF_Mod250901_Logging_Project" />
-        <module name="SF_Mod270406_Proxy" />
-        <module name="SF_Mod270604_Strategy" />
         <module name="SF_Mod270602_Observer" />
         <module name="SF_Mod270501_Iterator" />
         <module name="Module 23 after" />
         <module name="SF_Mod270605_Template_method" />
         <module name="SF_Mod260901_Project" />
-        <module name="SF_Mod270801_Univ_Stud" />
+        <module name="SF_Mod280201_getModifiers" />
         <module name="SF_Mod250701" />
-        <module name="SF_Mod270401_Adapter" />
         <module name="SF_Mod270501_Interpreter" />
         <module name="SF_Mod270501_Chain_of_responsibility" />
+        <module name="SF_Mod270504_Mediator" />
+        <module name="SF_Mod270601_Memento" />
+        <module name="Tests_from_internet" />
+        <module name="SF_Mod270403_Decorator" />
+        <module name="SF_Mod270406_Proxy" />
+        <module name="SF_Mod270604_Strategy" />
+        <module name="SF_Mod270801_Univ_Stud" />
+        <module name="SF_Mod270401_Adapter" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
