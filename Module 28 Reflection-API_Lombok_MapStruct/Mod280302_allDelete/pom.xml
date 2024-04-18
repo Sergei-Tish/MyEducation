@@ -3,18 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>MyEducation</artifactId>
+        <artifactId>Module_28_Reflection-API_Lombok_MapStruct</artifactId>
         <groupId>org.example</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Module_28_Reflection-API_Lombok_MapStruct</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>SF_Mod280201_getModifiers</module>
-        <module>Mod280302_allDelete</module>
-    </modules>
+    <artifactId>Mod280302_allDelete</artifactId>
 
     <properties>
         <maven.compiler.source>19</maven.compiler.source>

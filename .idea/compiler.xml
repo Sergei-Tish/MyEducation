@@ -10,6 +10,7 @@
         <module name="SF_Mod250601_Logback" />
         <module name="SF_Mod270606_Visitor" />
         <module name="SF_Mod2407_HW-02" />
+        <module name="Mod280302_allDelete" />
         <module name="SF_Mod270501_Command" />
         <module name="SF_Mod270603_State" />
         <module name="SF_Mod250901_Logging_Project" />
