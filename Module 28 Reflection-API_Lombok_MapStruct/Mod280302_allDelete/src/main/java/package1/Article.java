@@ -1,7 +1,8 @@
 package package1;
 
-public class Article {
-    private void delete() {
-        System.out.println("I delete all in Article");
+public class Article implements interfaces.Deletable {
+    @Override
+    public void delete(String articleId) {
+        System.out.println("I deleted the entire article linked to the ID article \"" + articleId + "\"");
     }
 }
