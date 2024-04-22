@@ -14,6 +14,7 @@
         <module name="SF_Mod270501_Command" />
         <module name="SF_Mod270603_State" />
         <module name="SF_Mod250901_Logging_Project" />
+        <module name="Mod280304_onlyPrivate_haveSetAndGet" />
         <module name="SF_Mod270602_Observer" />
         <module name="SF_Mod270501_Iterator" />
         <module name="Module 23 after" />
@@ -28,6 +29,7 @@
         <module name="Tests_from_internet" />
         <module name="SF_Mod270403_Decorator" />
         <module name="SF_Mod270406_Proxy" />
+        <module name="Mod280303_use_invoke" />
         <module name="SF_Mod270604_Strategy" />
         <module name="SF_Mod270801_Univ_Stud" />
         <module name="SF_Mod270401_Adapter" />

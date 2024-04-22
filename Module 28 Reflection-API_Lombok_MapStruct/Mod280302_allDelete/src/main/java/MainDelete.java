@@ -1,13 +1,7 @@
-import interfaces.Deletable;
 import package1.*;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,18 +10,37 @@ public class MainDelete {
     public static void main(String[] args) throws Exception {
         Article article = new Article();
         Picture picture = new Picture();
-        deleteAll(article, picture, new Article(), new Picture());
-//        List<Class> classList = MainDelete.getAllClasses();
-//        System.out.println(classList);
+        deleteAll("sdsd", article.getClass(), picture.getClass());
+
+        System.out.println();
+
+        List<Class> classes = new ArrayList<>();
+        classes.add(article.getClass());
+        classes.add(picture.getClass());
+        deleteAll("wwer", classes);
     }
 
-    public static void deleteAll(Deletable... args) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
 
-        System.out.println("Now I delete all: " + Arrays.stream(args).count() + " args");
-        for (Deletable deletable : args) {
-            Method methodDelete = deletable.getClass().getDeclaredMethod("delete");
-//            methodDelete.setAccessible(true);
-            methodDelete.invoke(deletable, "dd2");
+    public static void deleteAll(String articleId, Class... classes)
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException {
+
+        System.out.println("Now I delete all: " + Arrays.stream(classes).count() + " args");
+        for (Class clazz : classes) {
+            System.out.println(clazz);
+            Method methodDelete = clazz.getDeclaredMethod("delete", String.class);
+            methodDelete.setAccessible(true);
+            methodDelete.invoke(clazz.getConstructor().newInstance(), articleId);
+        }
+    }
+    public static void deleteAll(String articleId, List<Class> classes)
+            throws ReflectiveOperationException {
+
+        System.out.println("Now I delete all: " + classes.stream().count() + " args");
+        for (Class clazz : classes) {
+            System.out.println(clazz);
+            Method methodDelete = clazz.getDeclaredMethod("delete", String.class);
+            methodDelete.setAccessible(true);
+            methodDelete.invoke(clazz.getConstructor().newInstance(), articleId);
         }
     }
 }
