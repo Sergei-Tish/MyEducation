@@ -50,13 +50,6 @@ public class Main280304 {
 
     public static List<Class> getAllClasses() throws Exception {
         List<Class> classes = new ArrayList<>();
-//        URL upackage = Main280304.class.getClassLoader().getResource("");
-//
-//        BufferedReader reader = new BufferedReader(new InputStreamReader((InputStream) upackage.getContent()));
-//        String line;
-//        while ((line = reader.readLine()) != null) {
-//            classes.add(Class.forName(line.replace(".class", "")));
-//        }
         Article article = new Article();
         Author author = new Author();
         classes.add(article.getClass());
